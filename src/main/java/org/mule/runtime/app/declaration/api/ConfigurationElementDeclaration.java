@@ -6,7 +6,7 @@
  */
 package org.mule.runtime.app.declaration.api;
 
-import static org.mule.runtime.app.declaration.internal.component.location.Location.CONNECTION;
+import static org.mule.runtime.app.declaration.api.component.location.Location.CONNECTION;
 import static org.mule.runtime.app.declaration.internal.utils.Preconditions.checkArgument;
 
 import java.util.List;

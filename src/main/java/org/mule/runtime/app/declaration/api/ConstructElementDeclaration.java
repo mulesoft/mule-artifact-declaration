@@ -7,7 +7,7 @@
 package org.mule.runtime.app.declaration.api;
 
 import static java.util.Optional.empty;
-import static org.mule.runtime.app.declaration.internal.component.location.Location.SOURCE;
+import static org.mule.runtime.app.declaration.api.component.location.Location.SOURCE;
 
 import java.util.List;
 import java.util.Optional;

@@ -9,7 +9,7 @@ package org.mule.runtime.app.declaration.api;
 import static java.lang.Integer.parseInt;
 import static java.util.Optional.empty;
 import static org.apache.commons.lang3.StringUtils.isNumeric;
-import static org.mule.runtime.app.declaration.internal.component.location.Location.PARAMETERS;
+import static org.mule.runtime.app.declaration.api.component.location.Location.PARAMETERS;
 
 import java.util.LinkedList;
 import java.util.List;

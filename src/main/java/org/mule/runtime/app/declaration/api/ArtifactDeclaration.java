@@ -6,7 +6,7 @@
  */
 package org.mule.runtime.app.declaration.api;
 
-import org.mule.runtime.app.declaration.internal.component.location.Location;
+import org.mule.runtime.app.declaration.api.component.location.Location;
 
 import static java.util.Collections.unmodifiableList;
 

@@ -4,7 +4,7 @@
  * license, a copy of which has been included with this distribution in the
  * LICENSE.txt file.
  */
-package org.mule.runtime.app.declaration.internal.component.location;
+package org.mule.runtime.app.declaration.api.component.location;
 
 import static java.lang.String.join;
 import static org.apache.commons.lang3.StringUtils.isNumeric;

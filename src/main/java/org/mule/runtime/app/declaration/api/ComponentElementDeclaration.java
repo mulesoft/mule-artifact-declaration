@@ -12,8 +12,8 @@ import static java.util.Optional.empty;
 import static org.apache.commons.lang3.StringUtils.isNumeric;
 import static org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals;
 import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode;
-import static org.mule.runtime.app.declaration.internal.component.location.Location.ERROR_HANDLER;
-import static org.mule.runtime.app.declaration.internal.component.location.Location.PROCESSORS;
+import static org.mule.runtime.app.declaration.api.component.location.Location.ERROR_HANDLER;
+import static org.mule.runtime.app.declaration.api.component.location.Location.PROCESSORS;
 
 import java.util.LinkedList;
 import java.util.List;
