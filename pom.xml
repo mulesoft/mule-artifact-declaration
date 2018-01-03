@@ -278,11 +278,6 @@
                                     }
                                 }
                             ]]></analysisConfiguration>
-                        <analysisConfigurationFiles combine.children="append">
-                            <configurationFile>
-                                <path>api-ignored.json</path>
-                            </configurationFile>
-                        </analysisConfigurationFiles>
                     </configuration>
                     <executions>
                         <execution>
