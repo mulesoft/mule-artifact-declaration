@@ -6,8 +6,6 @@
  */
 package org.mule.runtime.app.declaration.api;
 
-import org.mule.api.annotation.NoImplement;
-
 /**
  * Adds {@link this#getRefName} and {@link this#setRefName} capabilities to an {@link ElementDeclaration}
  * that represents a global element that can be referenced by its name.
@@ -16,7 +14,6 @@ import org.mule.api.annotation.NoImplement;
  *
  * @since 1.0
  */
-@NoImplement
 public interface ReferableElementDeclaration {
 
   /**

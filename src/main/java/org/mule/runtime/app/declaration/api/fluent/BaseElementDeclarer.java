@@ -7,7 +7,6 @@
 package org.mule.runtime.app.declaration.api.fluent;
 
 
-import org.mule.api.annotation.NoExtend;
 import org.mule.runtime.app.declaration.api.ElementDeclaration;
 
 /**
@@ -15,7 +14,6 @@ import org.mule.runtime.app.declaration.api.ElementDeclaration;
  *
  * @since 1.0
  */
-@NoExtend
 public abstract class BaseElementDeclarer<T> {
 
   protected T declaration;

@@ -6,8 +6,6 @@
  */
 package org.mule.runtime.app.declaration.api;
 
-import org.mule.api.annotation.NoImplement;
-
 import java.io.Serializable;
 import java.util.Map;
 import java.util.Optional;
@@ -23,7 +21,6 @@ import java.util.Optional;
  *
  * @since 1.0
  */
-@NoImplement
 public interface MetadataPropertiesAwareElementDeclaration {
 
   /**
