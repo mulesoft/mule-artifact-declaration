@@ -1,0 +1,99 @@
+{
+  "1.1.1": {
+    "revapi": {
+      "ignore": [
+        {
+          "code": "java.annotation.added",
+          "old": "interface org.mule.runtime.app.declaration.api.CustomizableElementDeclaration",
+          "new": "interface org.mule.runtime.app.declaration.api.CustomizableElementDeclaration",
+          "annotationType": "org.mule.api.annotation.NoImplement",
+          "justification": "This interface is not meant to be implemented by the user"
+        },
+        {
+          "code": "java.annotation.added",
+          "old": "class org.mule.runtime.app.declaration.api.ElementDeclaration",
+          "new": "class org.mule.runtime.app.declaration.api.ElementDeclaration",
+          "annotationType": "org.mule.api.annotation.NoExtend",
+          "justification": "This class is not meant to be extend by the user"
+        },
+        {
+          "code": "java.annotation.added",
+          "old": "interface org.mule.runtime.app.declaration.api.ElementDeclarationContainer",
+          "new": "interface org.mule.runtime.app.declaration.api.ElementDeclarationContainer",
+          "annotationType": "org.mule.api.annotation.NoImplement",
+          "justification": "This interface is not meant to be implemented by the user"
+        },
+        {
+          "code": "java.annotation.added",
+          "old": "interface org.mule.runtime.app.declaration.api.GlobalElementDeclarationVisitor",
+          "new": "interface org.mule.runtime.app.declaration.api.GlobalElementDeclarationVisitor",
+          "annotationType": "org.mule.api.annotation.NoImplement",
+          "justification": "This interface is not meant to be implemented by the user"
+        },
+        {
+          "code": "java.annotation.added",
+          "old": "interface org.mule.runtime.app.declaration.api.MetadataPropertiesAwareElementDeclaration",
+          "new": "interface org.mule.runtime.app.declaration.api.MetadataPropertiesAwareElementDeclaration",
+          "annotationType": "org.mule.api.annotation.NoImplement",
+          "justification": "This interface is not meant to be implemented by the user"
+        },
+        {
+          "code": "java.annotation.added",
+          "old": "interface org.mule.runtime.app.declaration.api.NamedElementDeclaration",
+          "new": "interface org.mule.runtime.app.declaration.api.NamedElementDeclaration",
+          "annotationType": "org.mule.api.annotation.NoImplement",
+          "justification": "This interface is not meant to be implemented by the user"
+        },
+        {
+          "code": "java.annotation.added",
+          "old": "interface org.mule.runtime.app.declaration.api.ParameterValue",
+          "new": "interface org.mule.runtime.app.declaration.api.ParameterValue",
+          "annotationType": "org.mule.api.annotation.NoImplement",
+          "justification": "This interface is not meant to be implemented by the user"
+        },
+        {
+          "code": "java.annotation.added",
+          "old": "interface org.mule.runtime.app.declaration.api.ReferableElementDeclaration",
+          "new": "interface org.mule.runtime.app.declaration.api.ReferableElementDeclaration",
+          "annotationType": "org.mule.api.annotation.NoImplement",
+          "justification": "This interface is not meant to be implemented by the user"
+        },
+        {
+          "code": "java.annotation.added",
+          "old": "interface org.mule.runtime.app.declaration.api.component.location.Location",
+          "new": "interface org.mule.runtime.app.declaration.api.component.location.Location",
+          "annotationType": "org.mule.api.annotation.NoImplement",
+          "justification": "This interface is not meant to be implemented by the user"
+        },
+        {
+          "code": "java.annotation.added",
+          "old": "class org.mule.runtime.app.declaration.api.fluent.BaseElementDeclarer<T extends java.lang.Object>",
+          "new": "class org.mule.runtime.app.declaration.api.fluent.BaseElementDeclarer<T extends java.lang.Object>",
+          "annotationType": "org.mule.api.annotation.NoExtend",
+          "justification": "This class is not meant to be extend by the user"
+        },
+        {
+          "code": "java.annotation.added",
+          "old": "interface org.mule.runtime.app.declaration.api.fluent.HasNestedComponentDeclarer<T extends org.mule.runtime.app.declaration.api.fluent.BaseElementDeclarer>",
+          "new": "interface org.mule.runtime.app.declaration.api.fluent.HasNestedComponentDeclarer<T extends org.mule.runtime.app.declaration.api.fluent.BaseElementDeclarer>",
+          "annotationType": "org.mule.api.annotation.NoImplement",
+          "justification": "This interface is not meant to be implemented by the user"
+        },
+        {
+          "code": "java.annotation.added",
+          "old": "interface org.mule.runtime.app.declaration.api.fluent.HasNestedRoutesDeclaration<T extends org.mule.runtime.app.declaration.api.fluent.BaseElementDeclarer>",
+          "new": "interface org.mule.runtime.app.declaration.api.fluent.HasNestedRoutesDeclaration<T extends org.mule.runtime.app.declaration.api.fluent.BaseElementDeclarer>",
+          "annotationType": "org.mule.api.annotation.NoImplement",
+          "justification": "This interface is not meant to be implemented by the user"
+        },
+        {
+          "code": "java.annotation.added",
+          "old": "interface org.mule.runtime.app.declaration.api.fluent.ParameterizedBuilder<K extends java.lang.Object, V extends java.lang.Object, R extends java.lang.Object>",
+          "new": "interface org.mule.runtime.app.declaration.api.fluent.ParameterizedBuilder<K extends java.lang.Object, V extends java.lang.Object, R extends java.lang.Object>",
+          "annotationType": "org.mule.api.annotation.NoImplement",
+          "justification": "This interface is not meant to be implemented by the user"
+        }
+      ]
+    }
+  }
+}

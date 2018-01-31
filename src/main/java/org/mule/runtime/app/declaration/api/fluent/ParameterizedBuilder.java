@@ -6,6 +6,8 @@
  */
 package org.mule.runtime.app.declaration.api.fluent;
 
+import org.mule.api.annotation.NoImplement;
+
 /**
  * Provides a way to enrich a parameterized element with a parameter
  * with an identifier of type {@link K}, and a value of type {@link V}
@@ -13,6 +15,7 @@ package org.mule.runtime.app.declaration.api.fluent;
  *
  * @since 1.0
  */
+@NoImplement
 public interface ParameterizedBuilder<K, V, R> {
 
   R withParameter(K key, V value);
