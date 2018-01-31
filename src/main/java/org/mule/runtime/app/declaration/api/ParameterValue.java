@@ -6,6 +6,7 @@
  */
 package org.mule.runtime.app.declaration.api;
 
+import org.mule.api.annotation.NoImplement;
 import org.mule.runtime.app.declaration.api.fluent.ParameterObjectValue;
 
 /**
@@ -13,6 +14,7 @@ import org.mule.runtime.app.declaration.api.fluent.ParameterObjectValue;
  *
  * @since 1.0
  */
+@NoImplement
 public interface ParameterValue {
 
   /**
