@@ -6,6 +6,7 @@
  */
 package org.mule.runtime.app.declaration.api.fluent;
 
+import org.mule.api.annotation.NoImplement;
 import org.mule.runtime.app.declaration.api.RouteElementDeclaration;
 
 import java.util.function.Consumer;
@@ -15,6 +16,7 @@ import java.util.function.Consumer;
  *
  * @since 1.0
  */
+@NoImplement
 public interface HasNestedRoutesDeclaration<T extends BaseElementDeclarer> {
 
   /**
