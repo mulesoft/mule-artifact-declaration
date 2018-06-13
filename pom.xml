@@ -80,7 +80,7 @@
         <javaFormatter.plugin.version>2.0.1</javaFormatter.plugin.version>
         <formatterConfigPath>formatter.xml</formatterConfigPath>
         <formatterGoal>validate</formatterGoal>
-        <commonsLangVersion>3.6</commonsLangVersion>
+        <commonsLangVersion>3.7</commonsLangVersion>
         <license.maven.plugin.version>2.11</license.maven.plugin.version>
         <maven.surefire.plugin.version>2.20</maven.surefire.plugin.version>
         <aspectjVersion>1.9.1</aspectjVersion>
