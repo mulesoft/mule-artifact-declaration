@@ -11,6 +11,7 @@ import static java.util.regex.Pattern.MULTILINE;
 import static java.util.regex.Pattern.compile;
 import static org.apache.commons.lang3.StringUtils.removeEnd;
 import static org.apache.commons.lang3.StringUtils.removeStart;
+import static org.mule.runtime.app.declaration.api.fluent.SimpleValueType.STRING;
 import org.mule.runtime.app.declaration.api.ParameterElementDeclaration;
 import org.mule.runtime.app.declaration.api.ParameterValue;
 import org.mule.runtime.app.declaration.api.ParameterValueVisitor;
@@ -26,6 +27,7 @@ import java.util.regex.Pattern;
 public final class ParameterSimpleValue implements ParameterValue {
 
   private static final Pattern CDATA = compile("^<!\\[CDATA\\[(.+)\\]\\]>$", DOTALL | MULTILINE);
+
   private final String text;
   private final boolean isCData;
   private final SimpleValueType type;
@@ -49,7 +51,7 @@ public final class ParameterSimpleValue implements ParameterValue {
   }
 
   public static ParameterValue plain(String text) {
-    return plain(text, null);
+    return plain(text, STRING);
   }
 
   public static ParameterValue plain(String text, SimpleValueType type) {
@@ -57,7 +59,7 @@ public final class ParameterSimpleValue implements ParameterValue {
   }
 
   public static ParameterValue cdata(String text) {
-    return cdata(text, null);
+    return cdata(text, STRING);
   }
 
   public static ParameterValue cdata(String text, SimpleValueType type) {
