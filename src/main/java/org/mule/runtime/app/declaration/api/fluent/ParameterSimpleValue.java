@@ -11,13 +11,13 @@ import static java.util.regex.Pattern.MULTILINE;
 import static java.util.regex.Pattern.compile;
 import static org.apache.commons.lang3.StringUtils.removeEnd;
 import static org.apache.commons.lang3.StringUtils.removeStart;
+import static org.mule.runtime.app.declaration.api.fluent.SimpleValueType.STRING;
 import org.mule.runtime.app.declaration.api.ParameterElementDeclaration;
 import org.mule.runtime.app.declaration.api.ParameterValue;
 import org.mule.runtime.app.declaration.api.ParameterValueVisitor;
 
+import java.util.Objects;
 import java.util.regex.Pattern;
-
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * Represents the configured simple value of a given {@link ParameterElementDeclaration}.
@@ -27,16 +27,23 @@ import org.apache.commons.lang3.StringUtils;
 public final class ParameterSimpleValue implements ParameterValue {
 
   private static final Pattern CDATA = compile("^<!\\[CDATA\\[(.+)\\]\\]>$", DOTALL | MULTILINE);
+
   private final String text;
   private final boolean isCData;
+  private final SimpleValueType type;
 
-  private ParameterSimpleValue(String text, boolean asCData) {
+  private ParameterSimpleValue(String text, boolean asCData, SimpleValueType type) {
     this.text = text;
     this.isCData = asCData;
+    this.type = type;
   }
 
   public static ParameterValue of(String text) {
     return isCData(text) ? cdata(text) : plain(text);
+  }
+
+  public static ParameterValue of(String text, SimpleValueType type) {
+    return isCData(text) ? cdata(text, type) : plain(text, type);
   }
 
   private static boolean isCData(String text) {
@@ -44,12 +51,20 @@ public final class ParameterSimpleValue implements ParameterValue {
   }
 
   public static ParameterValue plain(String text) {
-    return new ParameterSimpleValue(text, false);
+    return plain(text, STRING);
+  }
+
+  public static ParameterValue plain(String text, SimpleValueType type) {
+    return new ParameterSimpleValue(text, false, type);
   }
 
   public static ParameterValue cdata(String text) {
+    return cdata(text, STRING);
+  }
+
+  public static ParameterValue cdata(String text, SimpleValueType type) {
     text = removeEnd(removeStart(text, "<![CDATA["), "]]>");
-    return new ParameterSimpleValue(text, true);
+    return new ParameterSimpleValue(text, true, type);
   }
 
   public String getValue() {
@@ -58,6 +73,10 @@ public final class ParameterSimpleValue implements ParameterValue {
 
   public boolean isCData() {
     return isCData;
+  }
+
+  public SimpleValueType getType() {
+    return type;
   }
 
   /**
@@ -78,12 +97,12 @@ public final class ParameterSimpleValue implements ParameterValue {
     }
 
     ParameterSimpleValue that = (ParameterSimpleValue) o;
-    return isCData ? that.isCData : !that.isCData && StringUtils.equals(text, that.text);
+    return isCData == that.isCData && Objects.equals(text, that.text) && Objects.equals(type, that.type);
   }
 
   @Override
   public int hashCode() {
-    return (isCData ? 31 : 0) + (text != null ? text.hashCode() : 0);
+    return Objects.hash(text, isCData, type);
   }
 
   @Override
