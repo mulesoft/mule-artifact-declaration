@@ -1,4 +1,54 @@
 {
+  "1.1.2": {
+    "revapi": {
+      "ignore": [
+        {
+          "code": "java.method.added",
+          "new": "method org.mule.runtime.app.declaration.api.ParameterValue org.mule.runtime.app.declaration.api.fluent.ParameterSimpleValue::cdata(java.lang.String, org.mule.runtime.app.declaration.api.fluent.SimpleValueType)",
+          "package": "org.mule.runtime.app.declaration.api.fluent",
+          "classSimpleName": "ParameterSimpleValue",
+          "methodName": "cdata",
+          "elementKind": "method",
+          "justification": ""
+        },
+        {
+          "code": "java.method.added",
+          "new": "method org.mule.runtime.app.declaration.api.fluent.SimpleValueType org.mule.runtime.app.declaration.api.fluent.ParameterSimpleValue::getType()",
+          "package": "org.mule.runtime.app.declaration.api.fluent",
+          "classSimpleName": "ParameterSimpleValue",
+          "methodName": "getType",
+          "elementKind": "method",
+          "justification": "Ignoring not breaking change"
+        },
+        {
+          "code": "java.method.added",
+          "new": "method org.mule.runtime.app.declaration.api.ParameterValue org.mule.runtime.app.declaration.api.fluent.ParameterSimpleValue::of(java.lang.String, org.mule.runtime.app.declaration.api.fluent.SimpleValueType)",
+          "package": "org.mule.runtime.app.declaration.api.fluent",
+          "classSimpleName": "ParameterSimpleValue",
+          "methodName": "of",
+          "elementKind": "method",
+          "justification": ""
+        },
+        {
+          "code": "java.method.added",
+          "new": "method org.mule.runtime.app.declaration.api.ParameterValue org.mule.runtime.app.declaration.api.fluent.ParameterSimpleValue::plain(java.lang.String, org.mule.runtime.app.declaration.api.fluent.SimpleValueType)",
+          "package": "org.mule.runtime.app.declaration.api.fluent",
+          "classSimpleName": "ParameterSimpleValue",
+          "methodName": "plain",
+          "elementKind": "method",
+          "justification": ""
+        },
+        {
+          "code": "java.class.added",
+          "new": "enum org.mule.runtime.app.declaration.api.fluent.SimpleValueType",
+          "package": "org.mule.runtime.app.declaration.api.fluent",
+          "classSimpleName": "SimpleValueType",
+          "elementKind": "enum",
+          "justification": ""
+        }
+      ]
+    }
+  },
   "1.1.1": {
     "revapi": {
       "ignore": [
