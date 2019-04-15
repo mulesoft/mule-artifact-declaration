@@ -7,7 +7,6 @@
 package org.mule.runtime.app.declaration.api;
 
 import static org.mule.runtime.app.declaration.internal.utils.Preconditions.checkArgument;
-
 import org.mule.metadata.api.model.ObjectType;
 import org.mule.runtime.app.declaration.api.fluent.ParameterObjectValue;
 
@@ -81,7 +80,7 @@ public final class TopLevelParameterDeclaration extends EnrichableElementDeclara
     }
 
     TopLevelParameterDeclaration that = (TopLevelParameterDeclaration) o;
-    return declaringExtension.equals(that.declaringExtension) && elementName.equals(that.elementName);
+    return declaringExtension.equals(that.declaringExtension) && elementName.equals(that.elementName) && value.equals(that.value);
   }
 
   @Override
@@ -89,6 +88,7 @@ public final class TopLevelParameterDeclaration extends EnrichableElementDeclara
     int result = super.hashCode();
     result = 31 * result + declaringExtension.hashCode();
     result = 31 * result + elementName.hashCode();
+    result = 31 * result + value.hashCode();
     return result;
   }
 
