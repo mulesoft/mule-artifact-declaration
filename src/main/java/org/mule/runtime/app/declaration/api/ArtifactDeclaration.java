@@ -6,9 +6,8 @@
  */
 package org.mule.runtime.app.declaration.api;
 
-import org.mule.runtime.app.declaration.api.component.location.Location;
-
 import static java.util.Collections.unmodifiableList;
+import org.mule.runtime.app.declaration.api.component.location.Location;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -56,7 +55,7 @@ public final class ArtifactDeclaration extends EnrichableElementDeclaration {
   public <T extends ElementDeclaration> Optional<T> findElement(Location location) {
 
     return this.getGlobalElements().stream()
-        .filter(g -> g.getRefName().equals(location.getGlobalName()))
+        .filter(g -> location.getGlobalName().equals(g.getRefName()))
         .findFirst()
         .map(g -> (T) g.findElement(location.getParts()).orElse(null));
   }
