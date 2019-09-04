@@ -74,8 +74,8 @@
     <properties>
         <javaVersion>1.8</javaVersion>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
-        <metadataModelApiVersion>1.2.2-SNAPSHOT</metadataModelApiVersion>
-        <muleModuleMavenPluginVersion>1.1.1-SNAPSHOT</muleModuleMavenPluginVersion>
+        <metadataModelApiVersion>1.2.3-SNAPSHOT</metadataModelApiVersion>
+        <muleModuleMavenPluginVersion>1.1.2-SNAPSHOT</muleModuleMavenPluginVersion>
         <xDocLint>-Xdoclint:none</xDocLint>
         <javaFormatter.plugin.version>2.0.1</javaFormatter.plugin.version>
         <formatterConfigPath>formatter.xml</formatterConfigPath>
@@ -91,7 +91,7 @@
         <maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
         <revapi-maven-plugin.version>0.9.5</revapi-maven-plugin.version>
         <oldMuleArtifactVersion>1.1.1</oldMuleArtifactVersion>
-        <muleRevapiExtensionVersion>1.2.1-SNAPSHOT</muleRevapiExtensionVersion>
+        <muleRevapiExtensionVersion>1.2.2-SNAPSHOT</muleRevapiExtensionVersion>
         <build.helper.maven.plugin.version>3.0.0</build.helper.maven.plugin.version>
     </properties>
 
