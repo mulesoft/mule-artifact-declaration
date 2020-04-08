@@ -411,7 +411,7 @@
                 <version>${javadoc.version}</version>
                 <configuration>
                     <doclint>none</doclint>
-                    <source>${java.version}</source>
+                    <source>${javaVersion}</source>
                 </configuration>
                 <reportSets>
                     <reportSet>
