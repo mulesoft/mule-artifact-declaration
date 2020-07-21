@@ -26,7 +26,7 @@ import java.util.Map;
 /**
  * A {@link TypeAdapter} for serializing instances of {@link ParameterElementDeclaration}
  *
- * @since 1.0
+ * @since 1.4.0
  */
 public class ParameterElementDeclarationTypeAdapter extends TypeAdapter<ParameterElementDeclaration> {
 

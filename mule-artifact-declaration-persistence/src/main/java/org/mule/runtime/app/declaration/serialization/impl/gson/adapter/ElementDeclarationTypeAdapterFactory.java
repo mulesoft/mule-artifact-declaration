@@ -19,7 +19,7 @@ import com.google.gson.reflect.TypeToken;
 /**
  * {@link TypeAdapterFactory} implementation for creating {@link ElementDeclaration} {@link TypeAdapter}s
  *
- * @since 1.0
+ * @since 1.4.0
  */
 public class ElementDeclarationTypeAdapterFactory implements TypeAdapterFactory {
 

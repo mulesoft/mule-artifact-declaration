@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * A {@link TypeAdapter} for serializing instances of {@link ParameterGroupElementDeclaration}
  *
- * @since 1.0
+ * @since 1.4.0
  */
 public class ParameterGroupElementDeclarationTypeAdapter extends TypeAdapter<ParameterGroupElementDeclaration> {
 

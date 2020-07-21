@@ -24,8 +24,15 @@ public class GsonElementDeclarationJsonSerializer implements ElementDeclarationJ
 
   private boolean prettyPrint;
 
-  public static GsonBuilder configureGson(GsonBuilder gson) {
-    return gson.registerTypeAdapterFactory(new ElementDeclarationTypeAdapterFactory())
+  /**
+   * Configures all required {@link TypeAdapter}s for a {@link Gson} serializer to be able to serialize and
+   * deserialize instances of {@link ElementDeclaration}
+   *
+   * @param gsonBuilder the {@link GsonBuilder} to configure
+   * @return the same {@link GsonBuilder} received.
+   */
+  public static GsonBuilder configureGsonForElementDeclaration(GsonBuilder gsonBuilder) {
+    return gsonBuilder.registerTypeAdapterFactory(new ElementDeclarationTypeAdapterFactory())
         .registerTypeHierarchyAdapter(ParameterValue.class, new ParameterValueTypeAdapter())
         .registerTypeAdapter(ParameterGroupElementDeclaration.class, new ParameterGroupElementDeclarationTypeAdapter());
   }
@@ -57,7 +64,7 @@ public class GsonElementDeclarationJsonSerializer implements ElementDeclarationJ
   }
 
   private Gson createGson() {
-    GsonBuilder gsonBuilder = configureGson(new GsonBuilder());
+    GsonBuilder gsonBuilder = configureGsonForElementDeclaration(new GsonBuilder());
 
     if (prettyPrint) {
       gsonBuilder.setPrettyPrinting();

@@ -33,7 +33,7 @@ import java.io.IOException;
 /**
  * A {@link TypeAdapter} for serializing instances of {@link ParameterElementDeclaration}
  *
- * @since 1.0
+ * @since 1.4.0
  */
 class RouteElementDeclarationTypeAdapter extends TypeAdapter<RouteElementDeclaration> {
 

@@ -41,7 +41,7 @@ import java.io.IOException;
 /**
  * A {@link TypeAdapter} for serializing instances of {@link ComponentElementDeclaration}
  *
- * @since 1.0
+ * @since 1.4.0
  */
 class ComponentElementDeclarationTypeAdapter extends TypeAdapter<ComponentElementDeclaration> {
 

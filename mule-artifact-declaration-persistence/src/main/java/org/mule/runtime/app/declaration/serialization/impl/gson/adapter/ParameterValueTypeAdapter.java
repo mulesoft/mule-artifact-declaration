@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * A {@link TypeAdapter} for serializing instances of {@link ParameterValue}
  *
- * @since 1.0
+ * @since 1.4.0
  */
 public class ParameterValueTypeAdapter extends TypeAdapter<ParameterValue> {
 

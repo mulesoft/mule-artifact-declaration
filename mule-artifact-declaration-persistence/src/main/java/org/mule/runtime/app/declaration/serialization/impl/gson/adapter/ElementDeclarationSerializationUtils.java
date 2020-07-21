@@ -34,7 +34,7 @@ import java.util.Map;
  * Util class used across all the type adapters related to the {@link ElementDeclarationJsonSerializer}.
  * This is an internal utils class, not to be considered part of the API. Backwards compatibility not guaranteed.
  *
- * @since 1.0
+ * @since 1.4.0
  */
 final class ElementDeclarationSerializationUtils {
 
