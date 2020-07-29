@@ -68,40 +68,43 @@ class GlobalElementDeclarationTypeAdapter extends TypeAdapter<GlobalElementDecla
 
   @Override
   public void write(JsonWriter out, GlobalElementDeclaration value) throws IOException {
-    final String kind = getKind(value);
+    if (value != null) {
+      final String kind = getKind(value);
 
-    out.beginObject();
-    out.name(REF_NAME).value(value.getRefName());
-    value.accept(new GlobalElementDeclarationVisitor() {
+      out.beginObject();
+      out.name(REF_NAME).value(value.getRefName());
+      value.accept(new GlobalElementDeclarationVisitor() {
 
-      @Override
-      public void visit(TopLevelParameterDeclaration declaration) {
-        populateIdentifiableObject(out, value, kind);
-        populateCustomizableObject(delegate, out, value);
-        populateMetadataAwareObject(delegate, out, value);
-        try {
-          out.name(VALUE).jsonValue(delegate.toJson(((TopLevelParameterDeclaration) value).getValue(), ParameterValue.class));
-        } catch (IOException e) {
-          throw new RuntimeException(format("An error occurred while serializing the declaration of element [%s] of kind [%s] from extension [%s]",
-                                            declaration.getName(), kind, declaration.getDeclaringExtension()),
-                                     e);
+        @Override
+        public void visit(TopLevelParameterDeclaration declaration) {
+          populateIdentifiableObject(out, value, kind);
+          populateCustomizableObject(delegate, out, value);
+          populateMetadataAwareObject(delegate, out, value);
+          try {
+            out.name(VALUE).jsonValue(delegate.toJson(((TopLevelParameterDeclaration) value).getValue(), ParameterValue.class));
+          }
+          catch (IOException e) {
+            throw new RuntimeException(format("An error occurred while serializing the declaration of element [%s] of kind [%s] from extension [%s]",
+                                              declaration.getName(), kind, declaration.getDeclaringExtension()),
+                                       e);
+          }
         }
-      }
 
-      @Override
-      public void visit(ConfigurationElementDeclaration declaration) {
-        populateParameterizedObject(delegate, out, (ParameterizedElementDeclaration) value, kind);
-        populateConnection(out, (ConfigurationElementDeclaration) value);
-      }
+        @Override
+        public void visit(ConfigurationElementDeclaration declaration) {
+          populateParameterizedObject(delegate, out, (ParameterizedElementDeclaration) value, kind);
+          populateConnection(out, (ConfigurationElementDeclaration) value);
+        }
 
-      @Override
-      public void visit(ConstructElementDeclaration declaration) {
-        populateParameterizedObject(delegate, out, (ParameterizedElementDeclaration) value, kind);
-        populateComponents(out, (ConstructElementDeclaration) value);
-      }
-    });
+        @Override
+        public void visit(ConstructElementDeclaration declaration) {
+          populateParameterizedObject(delegate, out, (ParameterizedElementDeclaration) value, kind);
+          populateComponents(out, (ConstructElementDeclaration) value);
+        }
+      });
 
-    out.endObject();
+      out.endObject();
+    }
   }
 
   private void populateComponents(JsonWriter out, ConstructElementDeclaration value) {
