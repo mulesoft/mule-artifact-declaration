@@ -117,6 +117,11 @@ public abstract class ComponentElementDeclaration<T extends ComponentElementDecl
     return super.findElement(parts);
   }
 
+  @Override
+  public void accept(ParameterizedElementDeclarationVisitor visitor) {
+    visitor.visitComponentElementDeclaration(this);
+  }
+
   private boolean isProcessorLocation(List<String> parts) {
     return parts.get(0).equals(PROCESSORS) && parts.size() > 1;
   }

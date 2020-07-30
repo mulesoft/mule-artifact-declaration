@@ -6,21 +6,17 @@
  */
 package org.mule.runtime.app.declaration.serialization.impl.gson.adapter;
 
-import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.COMPONENTS;
+import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.CONNECTION;
 import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.DECLARING_EXTENSION;
 import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.KIND;
 import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.NAME;
-import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.ROUTE;
 import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.declareParameterizedElement;
 import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.populateParameterizedObject;
-import org.mule.runtime.app.declaration.api.ComponentElementDeclaration;
-import org.mule.runtime.app.declaration.api.ParameterElementDeclaration;
-import org.mule.runtime.app.declaration.api.RouteElementDeclaration;
+import org.mule.runtime.app.declaration.api.ConnectionElementDeclaration;
+import org.mule.runtime.app.declaration.api.fluent.ConnectionElementDeclarer;
 import org.mule.runtime.app.declaration.api.fluent.ElementDeclarer;
-import org.mule.runtime.app.declaration.api.fluent.RouteElementDeclarer;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -32,33 +28,32 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 
 /**
- * A {@link TypeAdapter} for serializing instances of {@link ParameterElementDeclaration}
+ * A {@link TypeAdapter} for serializing instances of {@link ConnectionElementDeclaration}
  *
  * @since 1.4.0
  */
-class RouteElementDeclarationTypeAdapter extends TypeAdapter<RouteElementDeclaration> {
+class ConnectionElementDeclarationTypeAdapter extends TypeAdapter<ConnectionElementDeclaration> {
 
   private final Gson delegate;
 
-  RouteElementDeclarationTypeAdapter(Gson delegate) {
+  public ConnectionElementDeclarationTypeAdapter(Gson delegate) {
     this.delegate = delegate;
   }
 
   @Override
-  public void write(JsonWriter out, RouteElementDeclaration route) throws IOException {
-    if (route == null) {
+  public void write(JsonWriter out, ConnectionElementDeclaration value) throws IOException {
+    if (value == null) {
       out.nullValue();
       return;
     }
 
     out.beginObject();
-    populateParameterizedObject(delegate, out, route, ROUTE);
-    out.name(COMPONENTS).jsonValue(delegate.toJson(route.getComponents()));
+    populateParameterizedObject(delegate, out, value, CONNECTION);
     out.endObject();
   }
 
   @Override
-  public RouteElementDeclaration read(JsonReader in) throws IOException {
+  public ConnectionElementDeclaration read(JsonReader in) throws IOException {
     if (in.peek() == JsonToken.NULL) {
       in.nextNull();
       return null;
@@ -68,14 +63,12 @@ class RouteElementDeclarationTypeAdapter extends TypeAdapter<RouteElementDeclara
     if (parse.isJsonObject()) {
       JsonObject jsonObject = parse.getAsJsonObject();
       JsonElement elementKind = jsonObject.get(KIND);
-      if (elementKind != null && elementKind.getAsString().equals(ROUTE)) {
+      if (elementKind != null && elementKind.getAsString().equals(CONNECTION)) {
         String name = jsonObject.get(NAME).getAsString();
         String declaringExtension = jsonObject.get(DECLARING_EXTENSION).getAsString();
-        JsonArray components = jsonObject.get(COMPONENTS).getAsJsonArray();
 
-        RouteElementDeclarer declarer = ElementDeclarer.forExtension(declaringExtension).newRoute(name);
+        ConnectionElementDeclarer declarer = ElementDeclarer.forExtension(declaringExtension).newConnection(name);
         declareParameterizedElement(delegate, jsonObject, declarer);
-        components.forEach(c -> declarer.withComponent(delegate.fromJson(c, ComponentElementDeclaration.class)));
 
         return declarer.getDeclaration();
       }

@@ -92,6 +92,8 @@ public abstract class ParameterizedElementDeclaration extends EnrichableElementD
     return parts.get(0).equals(PARAMETERS) && parts.size() == 2;
   }
 
+  public abstract void accept(ParameterizedElementDeclarationVisitor visitor);
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {

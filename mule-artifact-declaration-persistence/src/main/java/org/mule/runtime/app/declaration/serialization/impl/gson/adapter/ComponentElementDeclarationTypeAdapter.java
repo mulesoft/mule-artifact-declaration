@@ -34,6 +34,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
@@ -53,6 +54,11 @@ class ComponentElementDeclarationTypeAdapter extends TypeAdapter<ComponentElemen
 
   @Override
   public void write(JsonWriter out, ComponentElementDeclaration value) throws IOException {
+    if (value == null) {
+      out.nullValue();
+      return;
+    }
+
     out.beginObject();
     populateParameterizedObject(delegate, out, value, getKind(value));
     if (value.getConfigRef() != null && !value.getConfigRef().trim().isEmpty()) {
@@ -64,6 +70,11 @@ class ComponentElementDeclarationTypeAdapter extends TypeAdapter<ComponentElemen
 
   @Override
   public ComponentElementDeclaration read(JsonReader in) throws IOException {
+    if (in.peek() == JsonToken.NULL) {
+      in.nextNull();
+      return null;
+    }
+
     final JsonElement parse = new JsonParser().parse(in);
     if (parse.isJsonObject()) {
       JsonObject jsonObject = parse.getAsJsonObject();

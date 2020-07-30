@@ -17,6 +17,7 @@ import com.google.gson.JsonParser;
 import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
@@ -40,35 +41,41 @@ public class ParameterElementDeclarationTypeAdapter extends TypeAdapter<Paramete
 
   @Override
   public void write(JsonWriter out, ParameterElementDeclaration parameter) throws IOException {
-    if (parameter != null) {
-      out.beginObject();
-      out.name(ElementDeclarationSerializationUtils.NAME).value(parameter.getName());
-      ElementDeclarationSerializationUtils.populateMetadataAwareObject(delegate, out, parameter);
-      out.name(ElementDeclarationSerializationUtils.VALUE).jsonValue(delegate.toJson(parameter.getValue(), ParameterValue.class));
-      out.endObject();
+    if (parameter == null) {
+      out.nullValue();
+      return;
     }
+
+    out.beginObject();
+    out.name(ElementDeclarationSerializationUtils.NAME).value(parameter.getName());
+    ElementDeclarationSerializationUtils.populateMetadataAwareObject(delegate, out, parameter);
+    out.name(ElementDeclarationSerializationUtils.VALUE).jsonValue(delegate.toJson(parameter.getValue(), ParameterValue.class));
+    out.endObject();
   }
 
   @Override
   public ParameterElementDeclaration read(JsonReader in) throws IOException {
-    if (in != null) {
-      final JsonElement parse = new JsonParser().parse(in);
-      if (parse.isJsonObject()) {
-        JsonObject jsonObject = parse.getAsJsonObject();
-        JsonElement elementName = jsonObject.get(ElementDeclarationSerializationUtils.NAME);
-        JsonElement elementValue = jsonObject.get(ElementDeclarationSerializationUtils.VALUE);
-        if (elementName != null && elementValue != null) {
+    if (in.peek() == JsonToken.NULL) {
+      in.nextNull();
+      return null;
+    }
 
-          ParameterElementDeclaration declaration = new ParameterElementDeclaration();
-          declaration.setName(elementName.getAsString());
-          declaration.setValue(delegate.fromJson(elementValue, ParameterValue.class));
+    final JsonElement parse = new JsonParser().parse(in);
+    if (parse.isJsonObject()) {
+      JsonObject jsonObject = parse.getAsJsonObject();
+      JsonElement elementName = jsonObject.get(ElementDeclarationSerializationUtils.NAME);
+      JsonElement elementValue = jsonObject.get(ElementDeclarationSerializationUtils.VALUE);
+      if (elementName != null && elementValue != null) {
 
-          Map<String, Serializable> properties =
-              delegate.fromJson(jsonObject.get(ElementDeclarationSerializationUtils.PROPERTIES),
-                                new TypeToken<Map<String, Serializable>>() {}.getType());
-          properties.forEach(declaration::addMetadataProperty);
-          return declaration;
-        }
+        ParameterElementDeclaration declaration = new ParameterElementDeclaration();
+        declaration.setName(elementName.getAsString());
+        declaration.setValue(delegate.fromJson(elementValue, ParameterValue.class));
+
+        Map<String, Serializable> properties =
+            delegate.fromJson(jsonObject.get(ElementDeclarationSerializationUtils.PROPERTIES),
+                              new TypeToken<Map<String, Serializable>>() {}.getType());
+        properties.forEach(declaration::addMetadataProperty);
+        return declaration;
       }
     }
     return null;

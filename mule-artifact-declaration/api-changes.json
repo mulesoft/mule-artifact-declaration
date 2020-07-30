@@ -1,4 +1,19 @@
 {
+  "1.4.0": {
+    "revapi": {
+      "ignore": [
+        {
+          "code": "java.method.abstractMethodAdded",
+          "new": "method void org.mule.runtime.app.declaration.api.ParameterizedElementDeclaration::accept(org.mule.runtime.app.declaration.api.ParameterizedElementDeclarationVisitor)",
+          "package": "org.mule.runtime.app.declaration.api",
+          "classSimpleName": "ParameterizedElementDeclaration",
+          "methodName": "accept",
+          "elementKind": "method",
+          "justification": "Support visitor in order to walk the hierarchy"
+        }
+      ]
+    }
+  },
   "1.1.1": {
     "revapi": {
       "ignore": [
