@@ -6,6 +6,8 @@
  */
 package org.mule.runtime.app.declaration.serialization.impl.gson.adapter;
 
+import static com.google.gson.stream.JsonToken.NULL;
+import static org.mule.runtime.app.declaration.api.fluent.ElementDeclarer.forExtension;
 import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.CONNECTION;
 import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.DECLARING_EXTENSION;
 import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.KIND;
@@ -14,7 +16,6 @@ import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.E
 import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.populateParameterizedObject;
 import org.mule.runtime.app.declaration.api.ConnectionElementDeclaration;
 import org.mule.runtime.app.declaration.api.fluent.ConnectionElementDeclarer;
-import org.mule.runtime.app.declaration.api.fluent.ElementDeclarer;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -54,7 +55,7 @@ class ConnectionElementDeclarationTypeAdapter extends TypeAdapter<ConnectionElem
 
   @Override
   public ConnectionElementDeclaration read(JsonReader in) throws IOException {
-    if (in.peek() == JsonToken.NULL) {
+    if (in.peek() == NULL) {
       in.nextNull();
       return null;
     }
@@ -67,7 +68,7 @@ class ConnectionElementDeclarationTypeAdapter extends TypeAdapter<ConnectionElem
         String name = jsonObject.get(NAME).getAsString();
         String declaringExtension = jsonObject.get(DECLARING_EXTENSION).getAsString();
 
-        ConnectionElementDeclarer declarer = ElementDeclarer.forExtension(declaringExtension).newConnection(name);
+        ConnectionElementDeclarer declarer = forExtension(declaringExtension).newConnection(name);
         declareParameterizedElement(delegate, jsonObject, declarer);
 
         return declarer.getDeclaration();

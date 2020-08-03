@@ -6,6 +6,7 @@
  */
 package org.mule.runtime.app.declaration.serialization.impl.gson.adapter;
 
+import static com.google.gson.stream.JsonToken.NULL;
 import static org.mule.runtime.app.declaration.api.fluent.ElementDeclarer.newParameterGroup;
 import org.mule.runtime.app.declaration.api.ParameterElementDeclaration;
 import org.mule.runtime.app.declaration.api.ParameterGroupElementDeclaration;
@@ -56,7 +57,7 @@ public class ParameterGroupElementDeclarationTypeAdapter extends TypeAdapter<Par
 
   @Override
   public ParameterGroupElementDeclaration read(JsonReader in) throws IOException {
-    if (in.peek() == JsonToken.NULL) {
+    if (in.peek() == NULL) {
       in.nextNull();
       return null;
     }

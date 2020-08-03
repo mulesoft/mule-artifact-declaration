@@ -6,6 +6,7 @@
  */
 package org.mule.runtime.app.declaration.serialization.impl.gson.adapter;
 
+import static com.google.gson.stream.JsonToken.NULL;
 import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.COMPONENTS;
 import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.CONFIG_REF;
 import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.CONSTRUCT;
@@ -70,7 +71,7 @@ class ComponentElementDeclarationTypeAdapter extends TypeAdapter<ComponentElemen
 
   @Override
   public ComponentElementDeclaration read(JsonReader in) throws IOException {
-    if (in.peek() == JsonToken.NULL) {
+    if (in.peek() == NULL) {
       in.nextNull();
       return null;
     }

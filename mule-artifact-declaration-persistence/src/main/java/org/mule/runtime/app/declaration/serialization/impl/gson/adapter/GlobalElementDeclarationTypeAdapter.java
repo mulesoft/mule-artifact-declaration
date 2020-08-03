@@ -6,6 +6,7 @@
  */
 package org.mule.runtime.app.declaration.serialization.impl.gson.adapter;
 
+import static com.google.gson.stream.JsonToken.NULL;
 import static java.lang.String.format;
 import static org.mule.runtime.app.declaration.api.fluent.ElementDeclarer.forExtension;
 import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.COMPONENTS;
@@ -122,7 +123,7 @@ class GlobalElementDeclarationTypeAdapter extends TypeAdapter<GlobalElementDecla
 
   @Override
   public GlobalElementDeclaration read(JsonReader in) throws IOException {
-    if (in.peek() == JsonToken.NULL) {
+    if (in.peek() == NULL) {
       in.nextNull();
       return null;
     }

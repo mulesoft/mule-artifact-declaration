@@ -6,6 +6,7 @@
  */
 package org.mule.runtime.app.declaration.serialization.impl.gson.adapter;
 
+import static com.google.gson.stream.JsonToken.NULL;
 import static org.mule.runtime.app.declaration.api.fluent.ParameterSimpleValue.cdata;
 import static org.mule.runtime.app.declaration.api.fluent.ParameterSimpleValue.plain;
 import org.mule.runtime.app.declaration.api.ParameterValue;
@@ -50,7 +51,7 @@ public class ParameterValueTypeAdapter extends TypeAdapter<ParameterValue> {
 
   @Override
   public ParameterValue read(JsonReader in) throws IOException {
-    if (in.peek() == JsonToken.NULL) {
+    if (in.peek() == NULL) {
       in.nextNull();
       return null;
     }
