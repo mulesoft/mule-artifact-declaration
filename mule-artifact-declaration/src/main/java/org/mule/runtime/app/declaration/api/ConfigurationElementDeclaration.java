@@ -81,6 +81,11 @@ public final class ConfigurationElementDeclaration extends ParameterizedElementD
   }
 
   @Override
+  public void accept(ParameterizedElementDeclarationVisitor visitor) {
+    visitor.visitConfigurationElementDeclaration(this);
+  }
+
+  @Override
   public boolean equals(Object o) {
     if (this == o) {
       return true;

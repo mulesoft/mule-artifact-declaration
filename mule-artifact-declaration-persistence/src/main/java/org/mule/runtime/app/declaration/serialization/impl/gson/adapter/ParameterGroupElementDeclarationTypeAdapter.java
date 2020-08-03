@@ -6,6 +6,7 @@
  */
 package org.mule.runtime.app.declaration.serialization.impl.gson.adapter;
 
+import static com.google.gson.stream.JsonToken.NULL;
 import static org.mule.runtime.app.declaration.api.fluent.ElementDeclarer.newParameterGroup;
 import org.mule.runtime.app.declaration.api.ParameterElementDeclaration;
 import org.mule.runtime.app.declaration.api.ParameterGroupElementDeclaration;
@@ -19,6 +20,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
@@ -40,37 +42,43 @@ public class ParameterGroupElementDeclarationTypeAdapter extends TypeAdapter<Par
 
   @Override
   public void write(JsonWriter out, ParameterGroupElementDeclaration group) throws IOException {
-    if (group != null) {
-      out.beginObject();
-      out.name(ElementDeclarationSerializationUtils.NAME).value(group.getName());
-      ElementDeclarationSerializationUtils.populateCustomizableObject(delegate, out, group);
-      ElementDeclarationSerializationUtils.populateMetadataAwareObject(delegate, out, group);
-      out.name(ElementDeclarationSerializationUtils.PARAMETERS).jsonValue(delegate.toJson(group.getParameters()));
-      out.endObject();
+    if (group == null) {
+      out.nullValue();
+      return;
     }
+
+    out.beginObject();
+    out.name(ElementDeclarationSerializationUtils.NAME).value(group.getName());
+    ElementDeclarationSerializationUtils.populateCustomizableObject(delegate, out, group);
+    ElementDeclarationSerializationUtils.populateMetadataAwareObject(delegate, out, group);
+    out.name(ElementDeclarationSerializationUtils.PARAMETERS).jsonValue(delegate.toJson(group.getParameters()));
+    out.endObject();
   }
 
   @Override
   public ParameterGroupElementDeclaration read(JsonReader in) throws IOException {
-    if (in != null) {
-      final JsonElement parse = new JsonParser().parse(in);
-      if (parse.isJsonObject()) {
-        JsonObject jsonObject = parse.getAsJsonObject();
-        JsonElement elementName = jsonObject.get(ElementDeclarationSerializationUtils.NAME);
-        JsonElement elementParameters = jsonObject.get(ElementDeclarationSerializationUtils.PARAMETERS);
-        if (elementName != null && elementParameters != null) {
-          ParameterGroupElementDeclarer declarer =
-              ElementDeclarationSerializationUtils.declareEnrichableElement(delegate, jsonObject,
-                                                                            newParameterGroup(elementName.getAsString()));
+    if (in.peek() == NULL) {
+      in.nextNull();
+      return null;
+    }
 
-          JsonArray parameters = elementParameters.getAsJsonArray();
-          parameters.forEach(p -> {
-            ParameterElementDeclaration param = delegate.fromJson(p, ParameterElementDeclaration.class);
-            declarer.withParameter(param.getName(), param.getValue());
-          });
+    final JsonElement parse = new JsonParser().parse(in);
+    if (parse.isJsonObject()) {
+      JsonObject jsonObject = parse.getAsJsonObject();
+      JsonElement elementName = jsonObject.get(ElementDeclarationSerializationUtils.NAME);
+      JsonElement elementParameters = jsonObject.get(ElementDeclarationSerializationUtils.PARAMETERS);
+      if (elementName != null && elementParameters != null) {
+        ParameterGroupElementDeclarer declarer =
+            ElementDeclarationSerializationUtils.declareEnrichableElement(delegate, jsonObject,
+                                                                          newParameterGroup(elementName.getAsString()));
 
-          return declarer.getDeclaration();
-        }
+        JsonArray parameters = elementParameters.getAsJsonArray();
+        parameters.forEach(p -> {
+          ParameterElementDeclaration param = delegate.fromJson(p, ParameterElementDeclaration.class);
+          declarer.withParameter(param.getName(), param.getValue());
+        });
+
+        return declarer.getDeclaration();
       }
     }
     return null;

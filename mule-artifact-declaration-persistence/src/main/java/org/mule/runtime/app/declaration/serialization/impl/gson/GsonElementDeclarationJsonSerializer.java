@@ -33,7 +33,7 @@ public class GsonElementDeclarationJsonSerializer implements ElementDeclarationJ
    */
   public static GsonBuilder configureGsonForElementDeclaration(GsonBuilder gsonBuilder) {
     return gsonBuilder.registerTypeAdapterFactory(new ElementDeclarationTypeAdapterFactory())
-        .registerTypeHierarchyAdapter(ParameterValue.class, new ParameterValueTypeAdapter())
+        .registerTypeAdapter(ParameterValue.class, new ParameterValueTypeAdapter())
         .registerTypeAdapter(ParameterGroupElementDeclaration.class, new ParameterGroupElementDeclarationTypeAdapter());
   }
 

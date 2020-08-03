@@ -19,4 +19,10 @@ public final class ConnectionElementDeclaration extends ParameterizedElementDecl
     setDeclaringExtension(extension);
     setName(name);
   }
+
+  @Override
+  public void accept(ParameterizedElementDeclarationVisitor visitor) {
+    visitor.visitConnectionElementDeclaration(this);
+  }
+
 }

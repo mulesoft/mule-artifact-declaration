@@ -6,6 +6,7 @@
  */
 package org.mule.runtime.app.declaration.serialization.impl.gson.adapter;
 
+import static com.google.gson.stream.JsonToken.NULL;
 import static java.lang.String.format;
 import static org.mule.runtime.app.declaration.api.fluent.ElementDeclarer.forExtension;
 import static org.mule.runtime.app.declaration.serialization.impl.gson.adapter.ElementDeclarationSerializationUtils.COMPONENTS;
@@ -49,6 +50,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
@@ -68,6 +70,11 @@ class GlobalElementDeclarationTypeAdapter extends TypeAdapter<GlobalElementDecla
 
   @Override
   public void write(JsonWriter out, GlobalElementDeclaration value) throws IOException {
+    if (value == null) {
+      out.nullValue();
+      return;
+    }
+
     final String kind = getKind(value);
 
     out.beginObject();
@@ -116,6 +123,11 @@ class GlobalElementDeclarationTypeAdapter extends TypeAdapter<GlobalElementDecla
 
   @Override
   public GlobalElementDeclaration read(JsonReader in) throws IOException {
+    if (in.peek() == NULL) {
+      in.nextNull();
+      return null;
+    }
+
     final JsonElement parse = new JsonParser().parse(in);
     if (parse.isJsonObject()) {
       JsonObject jsonObject = parse.getAsJsonObject();

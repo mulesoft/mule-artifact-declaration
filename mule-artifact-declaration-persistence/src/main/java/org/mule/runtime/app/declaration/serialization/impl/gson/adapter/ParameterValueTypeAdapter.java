@@ -6,6 +6,7 @@
  */
 package org.mule.runtime.app.declaration.serialization.impl.gson.adapter;
 
+import static com.google.gson.stream.JsonToken.NULL;
 import static org.mule.runtime.app.declaration.api.fluent.ParameterSimpleValue.cdata;
 import static org.mule.runtime.app.declaration.api.fluent.ParameterSimpleValue.plain;
 import org.mule.runtime.app.declaration.api.ParameterValue;
@@ -21,6 +22,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonToken;
 import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
@@ -39,18 +41,23 @@ public class ParameterValueTypeAdapter extends TypeAdapter<ParameterValue> {
 
   @Override
   public void write(JsonWriter jsonWriter, ParameterValue parameter) throws IOException {
-    if (parameter != null) {
-      parameter.accept(getValueVisitor(jsonWriter));
+    if (parameter == null) {
+      jsonWriter.nullValue();
+      return;
     }
+
+    parameter.accept(getValueVisitor(jsonWriter));
   }
 
   @Override
   public ParameterValue read(JsonReader in) throws IOException {
-    if (in != null) {
-      final JsonElement parse = new JsonParser().parse(in);
-      return getParameterValue(parse);
+    if (in.peek() == NULL) {
+      in.nextNull();
+      return null;
     }
-    return null;
+
+    final JsonElement parse = new JsonParser().parse(in);
+    return getParameterValue(parse);
   }
 
   private ParameterValueVisitor getValueVisitor(final JsonWriter jsonWriter) {
