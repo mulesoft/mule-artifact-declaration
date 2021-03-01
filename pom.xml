@@ -66,9 +66,9 @@
     </issueManagement>
 
     <scm>
-        <connection>scm:git:git://github.com/mulesoft/mule-api.git</connection>
-        <developerConnection>scm:git:git@github.com:mulesoft/mule-api.git</developerConnection>
-        <url>https://github.com/mulesoft/mule-api</url>
+        <connection>scm:git:git://github.com/mulesoft/mule-artifact-declaration.git</connection>
+        <developerConnection>scm:git:git@github.com:mulesoft/mule-artifact-declaration.git</developerConnection>
+        <url>https://github.com/mulesoft/mule-artifact-declaration</url>
     </scm>
 
     <properties>
