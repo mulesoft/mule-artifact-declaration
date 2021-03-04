@@ -32,16 +32,15 @@ public final class ParameterGroupElementDeclaration extends EnrichableElementDec
   }
 
   /**
-   * @return the {@link List} of {@link ParameterElementDeclaration parameters} associated with
-   * {@code this} 
+   * @return the {@link List} of {@link ParameterElementDeclaration parameters} associated with {@code this}
    */
   public List<ParameterElementDeclaration> getParameters() {
     return parameters;
   }
 
   /**
-   * @return the {@link ParameterElementDeclaration parameters} associated with the given {@code name}
-   * or {@link Optional#empty()} otherwise
+   * @return the {@link ParameterElementDeclaration parameters} associated with the given {@code name} or {@link Optional#empty()}
+   *         otherwise
    */
   public Optional<ParameterElementDeclaration> getParameter(String name) {
     return parameters.stream().filter(p -> p.getName().equals(name)).findFirst();
@@ -57,12 +56,12 @@ public final class ParameterGroupElementDeclaration extends EnrichableElementDec
   }
 
   /**
-   * Looks for a {@link ParameterElementDeclaration} contained by {@code this} declaration
-   * based on the {@code parts} of a {@link Location}.
+   * Looks for a {@link ParameterElementDeclaration} contained by {@code this} declaration based on the {@code parts} of a
+   * {@link Location}.
    *
    * @param parts the {@code parts} of a {@link Location} relative to {@code this} element
-   * @return the {@link ElementDeclaration} located in the path created by the {@code parts}
-   * or {@link Optional#empty()} if no {@link ElementDeclaration} was found in that location.
+   * @return the {@link ElementDeclaration} located in the path created by the {@code parts} or {@link Optional#empty()} if no
+   *         {@link ElementDeclaration} was found in that location.
    */
   @Override
   public <T extends ElementDeclaration> Optional<T> findElement(List<String> parts) {

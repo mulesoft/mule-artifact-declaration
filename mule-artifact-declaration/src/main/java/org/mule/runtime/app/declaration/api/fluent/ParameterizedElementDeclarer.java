@@ -27,7 +27,7 @@ public abstract class ParameterizedElementDeclarer<E extends ParameterizedElemen
   /**
    * Adds a {@link ParameterGroupElementDeclaration parameter group} to {@code this} {@link ParameterizedElementDeclaration}
    *
-   * @param group  the {@link ParameterGroupElementDeclarer group} to add in {@code this} {@link ParameterizedElementDeclaration}
+   * @param group the {@link ParameterGroupElementDeclarer group} to add in {@code this} {@link ParameterizedElementDeclaration}
    * @return {@code this} declarer
    */
   public E withParameterGroup(ParameterGroupElementDeclaration group) {
@@ -38,8 +38,8 @@ public abstract class ParameterizedElementDeclarer<E extends ParameterizedElemen
   /**
    * Adds a {@link ParameterGroupElementDeclaration parameter group} to {@code this} {@link ParameterizedElementDeclaration}
    *
-   * @param groupEnricher  the enricher that will configure the given {@link ParameterGroupElementDeclarer group} to add in
-   * {@code this} {@link ParameterizedElementDeclaration}
+   * @param groupEnricher the enricher that will configure the given {@link ParameterGroupElementDeclarer group} to add in
+   *        {@code this} {@link ParameterizedElementDeclaration}
    * @return {@code this} declarer
    */
   public E withParameterGroup(Consumer<ParameterGroupElementDeclarer> groupEnricher) {

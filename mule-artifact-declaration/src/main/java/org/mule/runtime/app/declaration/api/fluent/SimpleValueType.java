@@ -15,27 +15,27 @@ package org.mule.runtime.app.declaration.api.fluent;
 public enum SimpleValueType {
 
   /**
-   *Represents a value of {@link org.mule.metadata.api.model.BooleanType} type
+   * Represents a value of {@link org.mule.metadata.api.model.BooleanType} type
    */
   BOOLEAN,
 
   /**
-   *Represents a value of {@link org.mule.metadata.api.model.DateTimeType} type
+   * Represents a value of {@link org.mule.metadata.api.model.DateTimeType} type
    */
   DATETIME,
 
   /**
-   *Represents a value of {@link org.mule.metadata.api.model.TimeType} type
+   * Represents a value of {@link org.mule.metadata.api.model.TimeType} type
    */
   TIME,
 
   /**
-   *Represents a value of {@link org.mule.metadata.api.model.NumberType} type
+   * Represents a value of {@link org.mule.metadata.api.model.NumberType} type
    */
   NUMBER,
 
   /**
-   *Represents a value of {@link org.mule.metadata.api.model.StringType} or any other
+   * Represents a value of {@link org.mule.metadata.api.model.StringType} or any other
    * {@link org.mule.metadata.api.model.SimpleType} type which is not explicitly listed before.
    */
   STRING

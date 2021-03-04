@@ -18,9 +18,9 @@ import org.mule.runtime.app.declaration.api.fluent.ParameterObjectValue;
 public interface ParameterValue {
 
   /**
-   * Dispatches to the method with prefix "visit" with the specific value type as argument.
-   * Example {@code visitObjectValue(ParameterObjectValue objectValue) } will be called
-   * when this value is an {@link ParameterObjectValue}.
+   * Dispatches to the method with prefix "visit" with the specific value type as argument. Example
+   * {@code visitObjectValue(ParameterObjectValue objectValue) } will be called when this value is an
+   * {@link ParameterObjectValue}.
    * 
    * @param valueVisitor the visitor
    */

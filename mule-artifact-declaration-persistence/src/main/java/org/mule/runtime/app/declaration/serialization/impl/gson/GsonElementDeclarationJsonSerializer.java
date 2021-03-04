@@ -25,8 +25,8 @@ public class GsonElementDeclarationJsonSerializer implements ElementDeclarationJ
   private boolean prettyPrint;
 
   /**
-   * Configures all required {@link TypeAdapter}s for a {@link Gson} serializer to be able to serialize and
-   * deserialize instances of {@link ElementDeclaration}
+   * Configures all required {@link TypeAdapter}s for a {@link Gson} serializer to be able to serialize and deserialize instances
+   * of {@link ElementDeclaration}
    *
    * @param gsonBuilder the {@link GsonBuilder} to configure
    * @return the same {@link GsonBuilder} received.

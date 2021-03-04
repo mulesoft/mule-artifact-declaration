@@ -7,8 +7,8 @@
 package org.mule.runtime.app.declaration.api;
 
 /**
- * Adds {@link this#getRefName} and {@link this#setRefName} capabilities to an {@link ElementDeclaration}
- * that represents a global element that can be referenced by its name.
+ * Adds {@link this#getRefName} and {@link this#setRefName} capabilities to an {@link ElementDeclaration} that represents a global
+ * element that can be referenced by its name.
  *
  * @see ComponentElementDeclaration#getConfigRef
  *
@@ -17,15 +17,14 @@ package org.mule.runtime.app.declaration.api;
 public interface ReferableElementDeclaration {
 
   /**
-   * @return the configured name of the element that can be used to reference
-   * it in the context of an {@link ArtifactDeclaration}
+   * @return the configured name of the element that can be used to reference it in the context of an {@link ArtifactDeclaration}
    */
   String getRefName();
 
   /**
-   * Sets the configured name of the element that can be used to reference
-   * it in the context of an {@link ArtifactDeclaration}
-   * @param referableName  the configured name of the element
+   * Sets the configured name of the element that can be used to reference it in the context of an {@link ArtifactDeclaration}
+   * 
+   * @param referableName the configured name of the element
    */
   void setRefName(String referableName);
 }

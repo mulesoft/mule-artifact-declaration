@@ -125,12 +125,12 @@ public class ElementDeclarationJsonSerializerTestCase {
       @Override
       public void visit(ConfigurationElementDeclaration declaration) {
         validateSerialization(declaration, ConfigurationElementDeclaration.class);
-        //TODO(MULE-18578): uncomment when fixed
-        //testParameters(declaration.getParameterGroups());
-        //declaration.getConnection().ifPresent(conn -> {
-        //  validateSerialization(conn, ConnectionElementDeclaration.class);
-        //testParameters(conn.getParameterGroups());
-        //});
+        // TODO(MULE-18578): uncomment when fixed
+        // testParameters(declaration.getParameterGroups());
+        // declaration.getConnection().ifPresent(conn -> {
+        // validateSerialization(conn, ConnectionElementDeclaration.class);
+        // testParameters(conn.getParameterGroups());
+        // });
       }
 
       @Override
@@ -142,15 +142,15 @@ public class ElementDeclarationJsonSerializerTestCase {
       public void visit(ConstructElementDeclaration declaration) {
         validateSerialization(declaration, ConstructElementDeclaration.class);
         testComponents(declaration.getComponents());
-        //TODO(MULE-18578): uncomment when fixed
-        //testParameters(declaration.getParameterGroups());
+        // TODO(MULE-18578): uncomment when fixed
+        // testParameters(declaration.getParameterGroups());
       }
 
       private void testComponents(List<ComponentElementDeclaration> componentElementDeclarations) {
         componentElementDeclarations.forEach(c -> {
           validateSerialization(c, c.getClass());
-          //TODO(MULE-18578): uncomment when fixed
-          //testParameters(c.getParameterGroups());
+          // TODO(MULE-18578): uncomment when fixed
+          // testParameters(c.getParameterGroups());
         });
       }
 
