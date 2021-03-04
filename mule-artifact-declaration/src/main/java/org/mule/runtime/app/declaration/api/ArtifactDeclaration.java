@@ -46,7 +46,7 @@ public final class ArtifactDeclaration extends EnrichableElementDeclaration {
    * Looks for an {@link ElementDeclaration} contained by {@code this} declaration based on the given {@link Location}.
    *
    * @param location the absolute {@link Location} of the {@link ElementDeclaration} as part of {@code this}
-   *        {@link ArtifactDeclaration}
+   *                 {@link ArtifactDeclaration}
    * @return the {@link ElementDeclaration} located by the given {@link Location} or {@link Optional#empty()} if no
    *         {@link ElementDeclaration} was found in that location.
    */

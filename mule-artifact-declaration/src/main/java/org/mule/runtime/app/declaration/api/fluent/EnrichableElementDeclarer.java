@@ -27,7 +27,7 @@ public abstract class EnrichableElementDeclarer<D extends EnrichableElementDecla
   /**
    * Adds a metadata property to {@code this} element declaration
    *
-   * @param name the {@code name} of the {@code property}
+   * @param name  the {@code name} of the {@code property}
    * @param value the {@code value} of the {@code property}
    * @return {@code this} declarer
    */
@@ -42,7 +42,7 @@ public abstract class EnrichableElementDeclarer<D extends EnrichableElementDecla
    * {@link ElementDeclaration element}. No validation of any kind will be performed over this {@code customParameter} and its
    * value.
    *
-   * @param name the {@code name} of the {@link ParameterElementDeclaration}
+   * @param name  the {@code name} of the {@link ParameterElementDeclaration}
    * @param value the {@code value} of the {@link ParameterElementDeclaration} to associate to {@code this} element declaration
    * @return {@code this} declarer
    */

@@ -72,8 +72,8 @@ public final class ElementDeclarer {
    * {@link org.mule.runtime.api.meta.model.ExtensionModel Extension} with the given {@code name}
    * 
    * @param name the {@link org.mule.runtime.api.meta.model.ExtensionModel#getName() name} of the
-   *        {@link org.mule.runtime.api.meta.model.ExtensionModel Extension} to be associated to the {@link ElementDeclaration
-   *        declarations} created with {@code this} {@link ElementDeclarer}
+   *             {@link org.mule.runtime.api.meta.model.ExtensionModel Extension} to be associated to the
+   *             {@link ElementDeclaration declarations} created with {@code this} {@link ElementDeclarer}
    * @return Creates a new instance of a {@link ElementDeclarer declarer} associated to the referenced {@link ExtensionModel
    *         Extension}
    */

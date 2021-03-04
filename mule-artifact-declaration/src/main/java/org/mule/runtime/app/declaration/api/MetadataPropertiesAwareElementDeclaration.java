@@ -49,7 +49,7 @@ public interface MetadataPropertiesAwareElementDeclaration {
    * {@code metadataProperty} with the custom prefix {@code my-http-alias}. This way, we can honour the original {@code XML}
    * representation, but keep the {@link ElementDeclaration} closer the the model it represents.
    *
-   * @param name custom attribute name.
+   * @param name  custom attribute name.
    * @param value custom attribute value.
    */
   void addMetadataProperty(String name, Serializable value);

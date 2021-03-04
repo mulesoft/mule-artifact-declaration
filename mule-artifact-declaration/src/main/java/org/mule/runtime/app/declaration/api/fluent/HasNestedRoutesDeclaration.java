@@ -30,9 +30,9 @@ public interface HasNestedRoutesDeclaration<T extends BaseElementDeclarer> {
   /**
    * Adds a {@link RouteElementDeclaration component} to the declaration being built
    *
-   * @param name the {@code name} of the new {@link RouteElementDeclaration}
+   * @param name                the {@code name} of the new {@link RouteElementDeclaration}
    * @param declarationEnricher an enricher that should populate the given {@link RouteElementDeclarer} with the route
-   *        configuration
+   *                            configuration
    * @return {@code this} declarer
    */
   T withRoute(String name, Consumer<RouteElementDeclarer> declarationEnricher);

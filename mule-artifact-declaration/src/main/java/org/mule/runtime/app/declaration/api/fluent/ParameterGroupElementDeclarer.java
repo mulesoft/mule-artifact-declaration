@@ -42,7 +42,7 @@ public final class ParameterGroupElementDeclarer
   /**
    * Adds a {@link ParameterElementDeclaration parameter} to {@code this} parametrized element declaration
    *
-   * @param name the {@code name} of the {@link ParameterElementDeclaration}
+   * @param name  the {@code name} of the {@link ParameterElementDeclaration}
    * @param value the {@code value} of the {@link ParameterElementDeclaration} to associate to {@code this} element declaration
    * @return {@code this} declarer
    */
@@ -53,9 +53,9 @@ public final class ParameterGroupElementDeclarer
   /**
    * Adds a {@link ParameterElementDeclaration parameter} to {@code this} parametrized element declaration
    *
-   * @param name the {@code name} of the {@link ParameterElementDeclaration}
+   * @param name  the {@code name} of the {@link ParameterElementDeclaration}
    * @param value the {@link ParameterValue} of the {@link ParameterElementDeclaration} to associate to {@code this} element
-   *        declaration
+   *              declaration
    * @return {@code this} declarer
    */
   public ParameterGroupElementDeclarer withParameter(String name, ParameterValue value) {
@@ -66,9 +66,9 @@ public final class ParameterGroupElementDeclarer
   /**
    * Adds a {@link ParameterElementDeclaration parameter} to {@code this} parametrized element declaration
    *
-   * @param name the {@code name} of the {@link ParameterElementDeclaration}
+   * @param name  the {@code name} of the {@link ParameterElementDeclaration}
    * @param value the {@link ParameterValue} of the {@link ParameterElementDeclaration} to associate to {@code this} element
-   *        declaration
+   *              declaration
    * @return {@code this} declarer
    */
   public ParameterGroupElementDeclarer withParameter(String name, ParameterValue value, Map<String, Serializable> properties) {
