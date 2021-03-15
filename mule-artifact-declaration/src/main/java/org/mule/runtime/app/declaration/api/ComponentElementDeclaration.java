@@ -34,8 +34,8 @@ public abstract class ComponentElementDeclaration<T extends ComponentElementDecl
 
   /**
    * Sets the {@code config-ref} parameter required for {@code this} component
-   * @param configRef the {@link ReferableElementDeclaration#getRefName()}
-   *                  of a {@link ConfigurationElementDeclaration}
+   * 
+   * @param configRef the {@link ReferableElementDeclaration#getRefName()} of a {@link ConfigurationElementDeclaration}
    */
   public void setConfigRef(String configRef) {
     this.configRef = configRef;
@@ -49,8 +49,8 @@ public abstract class ComponentElementDeclaration<T extends ComponentElementDecl
   }
 
   /**
-   * @return the {@link List} of {@link ComponentElementDeclaration flows} contained by
-   * {@code this} {@link ComponentElementDeclaration}
+   * @return the {@link List} of {@link ComponentElementDeclaration flows} contained by {@code this}
+   *         {@link ComponentElementDeclaration}
    */
   public List<ComponentElementDeclaration> getComponents() {
     return unmodifiableList(components);
@@ -58,6 +58,7 @@ public abstract class ComponentElementDeclaration<T extends ComponentElementDecl
 
   /**
    * Adds a {@link ComponentElementDeclaration} as a component contained by {@code this} {@link ComponentElementDeclaration scope}
+   * 
    * @param declaration the {@link ComponentElementDeclaration} child of {@code this} {@link ComponentElementDeclaration scope}
    * @return {@code this} {@link ComponentElementDeclaration scope}
    */
@@ -68,6 +69,7 @@ public abstract class ComponentElementDeclaration<T extends ComponentElementDecl
 
   /**
    * Adds a {@link ComponentElementDeclaration} as a component contained by {@code this} {@link ComponentElementDeclaration scope}
+   * 
    * @param declaration the {@link ComponentElementDeclaration} child of {@code this} {@link ComponentElementDeclaration scope}
    * @return {@code this} {@link ComponentElementDeclaration scope}
    */
@@ -77,12 +79,12 @@ public abstract class ComponentElementDeclaration<T extends ComponentElementDecl
   }
 
   /**
-   * Looks for an {@link ElementDeclaration} contained by {@code this} declaration
-   * based on the {@code parts} of a {@link Location}.
+   * Looks for an {@link ElementDeclaration} contained by {@code this} declaration based on the {@code parts} of a
+   * {@link Location}.
    *
    * @param parts the {@code parts} of a {@link Location} relative to {@code this} element
-   * @return the {@link ElementDeclaration} located in the path created by the {@code parts}
-   * or {@link Optional#empty()} if no {@link ElementDeclaration} was found in that location.
+   * @return the {@link ElementDeclaration} located in the path created by the {@code parts} or {@link Optional#empty()} if no
+   *         {@link ElementDeclaration} was found in that location.
    */
   @Override
   public <T extends ElementDeclaration> Optional<T> findElement(List<String> parts) {

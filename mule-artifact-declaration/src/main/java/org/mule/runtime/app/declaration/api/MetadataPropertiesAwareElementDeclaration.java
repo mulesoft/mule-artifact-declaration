@@ -11,12 +11,10 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * A declaration which can be augmented with metadata
- * regarding the represented element model.
+ * A declaration which can be augmented with metadata regarding the represented element model.
  * <p>
- * This is useful for extending the information over a particular data element
- * of the declared artifact. Examples of this can go from the fact that the data has
- * to be escaped as a CDATA element, all the way to actually storing the origin element.
+ * This is useful for extending the information over a particular data element of the declared artifact. Examples of this can go
+ * from the fact that the data has to be escaped as a CDATA element, all the way to actually storing the origin element.
  * <p>
  *
  * @since 1.0
@@ -24,10 +22,9 @@ import java.util.Optional;
 public interface MetadataPropertiesAwareElementDeclaration {
 
   /**
-   * Retrieves a {@code metadataProperty} to the {@link ElementDeclaration}.
-   * This property is meant to hold only metadata of the declaration,
-   * related to how the declaration has to be represented but not affecting nor containing
-   * information related to the model configured with this declaration.
+   * Retrieves a {@code metadataProperty} to the {@link ElementDeclaration}. This property is meant to hold only metadata of the
+   * declaration, related to how the declaration has to be represented but not affecting nor containing information related to the
+   * model configured with this declaration.
    *
    * @param name the name of the property
    * @return the property for the given name, or {@link Optional#empty()} if none was found.
@@ -40,23 +37,19 @@ public interface MetadataPropertiesAwareElementDeclaration {
   Map<String, Serializable> getMetadataProperties();
 
   /**
-   * Adds a {@code metadataProperty} to the {@link ElementDeclaration}.
-   * This property is meant to hold only metadata of the declaration,
-   * related to how the declaration has to be represented but not affecting nor containing
-   * information related to the model configured with this declaration.
+   * Adds a {@code metadataProperty} to the {@link ElementDeclaration}. This property is meant to hold only metadata of the
+   * declaration, related to how the declaration has to be represented but not affecting nor containing information related to the
+   * model configured with this declaration.
    *
-   * This property may contain information regarding things like transformations required for
-   * the persistence of a given element, or propagating particular metadata of how the
-   * declaration was originally declared before deserialization.
+   * This property may contain information regarding things like transformations required for the persistence of a given element,
+   * or propagating particular metadata of how the declaration was originally declared before deserialization.
    *
-   * An example for this would be having an {@code xmlns} prefix declared different than
-   * the one declared by the extension. So in order to represent:
-   * {@code <my-http-alias:listener-config>} we will declare an {@code http:listener-config}
-   * adding also a {@code metadataProperty} with the custom prefix {@code my-http-alias}.
-   * This way, we can honour the original {@code XML} representation, but keep
-   * the {@link ElementDeclaration} closer the the model it represents.
+   * An example for this would be having an {@code xmlns} prefix declared different than the one declared by the extension. So in
+   * order to represent: {@code <my-http-alias:listener-config>} we will declare an {@code http:listener-config} adding also a
+   * {@code metadataProperty} with the custom prefix {@code my-http-alias}. This way, we can honour the original {@code XML}
+   * representation, but keep the {@link ElementDeclaration} closer the the model it represents.
    *
-   * @param name custom attribute name.
+   * @param name  custom attribute name.
    * @param value custom attribute value.
    */
   void addMetadataProperty(String name, Serializable value);

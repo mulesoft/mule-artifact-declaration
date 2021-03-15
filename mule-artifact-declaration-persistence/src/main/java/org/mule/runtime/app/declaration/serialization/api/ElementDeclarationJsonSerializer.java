@@ -19,9 +19,9 @@ import org.mule.runtime.app.declaration.serialization.impl.gson.GsonElementDecla
 public interface ElementDeclarationJsonSerializer {
 
   /**
-   * Creates a new instance of the {@link ElementDeclarationJsonSerializer}.
-   * This serializer is capable of serializing and deserializing {@link ElementDeclaration}s
-   * from JSON ({@link #deserialize(String, Class)} and to JSON ( {@link #serialize(ElementDeclaration)}
+   * Creates a new instance of the {@link ElementDeclarationJsonSerializer}. This serializer is capable of serializing and
+   * deserializing {@link ElementDeclaration}s from JSON ({@link #deserialize(String, Class)} and to JSON (
+   * {@link #serialize(ElementDeclaration)}
    */
   static ElementDeclarationJsonSerializer getDefault(boolean prettyPrint) {
     return new GsonElementDeclarationJsonSerializer(prettyPrint);

@@ -7,22 +7,22 @@
 package org.mule.runtime.app.declaration.api;
 
 /**
- * Extends the concept of a named element to provides a unique way of identifying an
- * element declaration for a given {@link org.mule.runtime.api.meta.model.ExtensionModel}
+ * Extends the concept of a named element to provides a unique way of identifying an element declaration for a given
+ * {@link org.mule.runtime.api.meta.model.ExtensionModel}
  *
  * @since 1.0
  */
 public interface IdentifiableElementDeclaration extends NamedElementDeclaration {
 
   /**
-   * @return the {@link org.mule.runtime.api.meta.model.ExtensionModel#getName name} of the extension containing the
-   * model associated to {@code this} element declaration
+   * @return the {@link org.mule.runtime.api.meta.model.ExtensionModel#getName name} of the extension containing the model
+   *         associated to {@code this} element declaration
    */
   String getDeclaringExtension();
 
   /**
-   * Sets the {@link org.mule.runtime.api.meta.model.ExtensionModel#getName name} of the extension containing the
-   * model associated to {@code this} element declaration
+   * Sets the {@link org.mule.runtime.api.meta.model.ExtensionModel#getName name} of the extension containing the model associated
+   * to {@code this} element declaration
    *
    * @param declaringExtension the extension's {@link org.mule.runtime.api.meta.model.ExtensionModel#getName name}
    */

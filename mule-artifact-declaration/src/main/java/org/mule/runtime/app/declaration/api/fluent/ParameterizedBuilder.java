@@ -7,9 +7,8 @@
 package org.mule.runtime.app.declaration.api.fluent;
 
 /**
- * Provides a way to enrich a parameterized element with a parameter
- * with an identifier of type {@link K}, and a value of type {@link V}
- * using a builder pattern with return type {@link R}
+ * Provides a way to enrich a parameterized element with a parameter with an identifier of type {@link K}, and a value of type
+ * {@link V} using a builder pattern with return type {@link R}
  *
  * @since 1.0
  */

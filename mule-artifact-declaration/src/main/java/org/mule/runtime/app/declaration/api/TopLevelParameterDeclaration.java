@@ -14,8 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * A programmatic descriptor of an {@link ObjectType} configuration that will
- * be used as a global element of the mule application.
+ * A programmatic descriptor of an {@link ObjectType} configuration that will be used as a global element of the mule application.
  *
  * @since 1.0
  */
@@ -35,8 +34,8 @@ public final class TopLevelParameterDeclaration extends EnrichableElementDeclara
   /**
    * Associates a {@link ParameterObjectValue} as part of {@code this} parameter configuration declaration
    * <p>
-   * Since a {@link TopLevelParameterDeclaration} represents an {@link ObjectType} global declaration,
-   * only a {@link ParameterObjectValue} can be associated to it.
+   * Since a {@link TopLevelParameterDeclaration} represents an {@link ObjectType} global declaration, only a
+   * {@link ParameterObjectValue} can be associated to it.
    *
    * @param value the {@link ParameterObjectValue} to associate with {@code this} parameter configuration
    */

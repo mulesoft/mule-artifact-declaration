@@ -31,16 +31,14 @@ public abstract class ParameterizedElementDeclaration extends EnrichableElementD
   public ParameterizedElementDeclaration() {}
 
   /**
-   * @return the {@link ParameterElementDeclaration group} with given {@code name}
-   * or {@link Optional#empty()} if none is found.
+   * @return the {@link ParameterElementDeclaration group} with given {@code name} or {@link Optional#empty()} if none is found.
    */
   public Optional<ParameterGroupElementDeclaration> getParameterGroup(String name) {
     return Optional.ofNullable(groups.get(name));
   }
 
   /**
-   * @return the {@link List} of {@link ParameterElementDeclaration groups} associated with
-   * {@code this} 
+   * @return the {@link List} of {@link ParameterElementDeclaration groups} associated with {@code this}
    */
   public List<ParameterGroupElementDeclaration> getParameterGroups() {
     return unmodifiableList(new ArrayList<>(groups.values()));
@@ -61,12 +59,12 @@ public abstract class ParameterizedElementDeclaration extends EnrichableElementD
   }
 
   /**
-   * Looks for a {@link ParameterElementDeclaration} contained by {@code this} declaration
-   * based on the {@code parts} of a {@link Location}.
+   * Looks for a {@link ParameterElementDeclaration} contained by {@code this} declaration based on the {@code parts} of a
+   * {@link Location}.
    *
    * @param parts the {@code parts} of a {@link Location} relative to {@code this} element
-   * @return the {@link ElementDeclaration} located in the path created by the {@code parts}
-   * or {@link Optional#empty()} if no {@link ElementDeclaration} was found in that location.
+   * @return the {@link ElementDeclaration} located in the path created by the {@code parts} or {@link Optional#empty()} if no
+   *         {@link ElementDeclaration} was found in that location.
    */
   @Override
   public <T extends ElementDeclaration> Optional<T> findElement(List<String> parts) {

@@ -7,9 +7,9 @@
 package org.mule.runtime.app.declaration.api;
 
 /**
- * An {@link ElementDeclaration} that can be present as a direct child of an {@link ArtifactDeclaration}.
- * This implies that the {@link ElementDeclaration} has to be also
- * {@link IdentifiableElementDeclaration identifiable} and {@link ReferableElementDeclaration referable}.
+ * An {@link ElementDeclaration} that can be present as a direct child of an {@link ArtifactDeclaration}. This implies that the
+ * {@link ElementDeclaration} has to be also {@link IdentifiableElementDeclaration identifiable} and
+ * {@link ReferableElementDeclaration referable}.
  *
  * @since 1.0
  */
@@ -18,9 +18,9 @@ public interface GlobalElementDeclaration
     ElementDeclarationContainer, MetadataPropertiesAwareElementDeclaration {
 
   /**
-   * Dispatches to the method with prefix "visit" with the specific value type as argument.
-   * Example {@code visitObjectValue(ParameterObjectValue objectValue) } will be called
-   * when this value is an {@link GlobalElementDeclaration}.
+   * Dispatches to the method with prefix "visit" with the specific value type as argument. Example
+   * {@code visitObjectValue(ParameterObjectValue objectValue) } will be called when this value is an
+   * {@link GlobalElementDeclaration}.
    *
    * @param visitor the visitor
    */

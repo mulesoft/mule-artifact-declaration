@@ -15,8 +15,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * Represents the configured complex value of a given {@link ParameterElementDeclaration}.
- * An ObjectValue parameter contains multiple parameter values.
+ * Represents the configured complex value of a given {@link ParameterElementDeclaration}. An ObjectValue parameter contains
+ * multiple parameter values.
  *
  * @since 1.0
  */

@@ -60,12 +60,12 @@ public final class ConfigurationElementDeclaration extends ParameterizedElementD
   }
 
   /**
-   * Looks for a {@link ParameterElementDeclaration} contained by {@code this} declaration
-   * based on the {@code parts} of a {@link Location}.
+   * Looks for a {@link ParameterElementDeclaration} contained by {@code this} declaration based on the {@code parts} of a
+   * {@link Location}.
    *
    * @param parts the {@code parts} of a {@link Location} relative to {@code this} element
-   * @return the {@link ElementDeclaration} located in the path created by the {@code parts}
-   * or {@link Optional#empty()} if no {@link ElementDeclaration} was found in that location.
+   * @return the {@link ElementDeclaration} located in the path created by the {@code parts} or {@link Optional#empty()} if no
+   *         {@link ElementDeclaration} was found in that location.
    */
   @Override
   public <T extends ElementDeclaration> Optional<T> findElement(List<String> parts) {

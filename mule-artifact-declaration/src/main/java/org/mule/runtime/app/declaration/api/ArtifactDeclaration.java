@@ -25,16 +25,15 @@ public final class ArtifactDeclaration extends EnrichableElementDeclaration {
   public ArtifactDeclaration() {}
 
   /**
-   * @return the {@link List} of {@link GlobalElementDeclaration global elements} associated with
-   * {@code this} {@link ArtifactDeclaration}
+   * @return the {@link List} of {@link GlobalElementDeclaration global elements} associated with {@code this}
+   *         {@link ArtifactDeclaration}
    */
   public List<GlobalElementDeclaration> getGlobalElements() {
     return unmodifiableList(globalElements);
   }
 
   /**
-   * Adds a property to the {@link ElementDeclaration}.
-   * This property is meant to hold only metadata of the declaration.
+   * Adds a property to the {@link ElementDeclaration}. This property is meant to hold only metadata of the declaration.
    *
    * @param declaration the {@link GlobalElementDeclaration} to add.
    */
@@ -44,13 +43,12 @@ public final class ArtifactDeclaration extends EnrichableElementDeclaration {
   }
 
   /**
-   * Looks for an {@link ElementDeclaration} contained by {@code this} declaration
-   * based on the given {@link Location}.
+   * Looks for an {@link ElementDeclaration} contained by {@code this} declaration based on the given {@link Location}.
    *
-   * @param location the absolute {@link Location} of the {@link ElementDeclaration} as part
-   *                of {@code this} {@link ArtifactDeclaration}
-   * @return the {@link ElementDeclaration} located by the given {@link Location}
-   * or {@link Optional#empty()} if no {@link ElementDeclaration} was found in that location.
+   * @param location the absolute {@link Location} of the {@link ElementDeclaration} as part of {@code this}
+   *                 {@link ArtifactDeclaration}
+   * @return the {@link ElementDeclaration} located by the given {@link Location} or {@link Optional#empty()} if no
+   *         {@link ElementDeclaration} was found in that location.
    */
   public <T extends ElementDeclaration> Optional<T> findElement(Location location) {
 

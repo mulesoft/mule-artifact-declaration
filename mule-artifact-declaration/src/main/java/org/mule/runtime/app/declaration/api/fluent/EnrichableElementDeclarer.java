@@ -37,10 +37,10 @@ public abstract class EnrichableElementDeclarer<D extends EnrichableElementDecla
   }
 
   /**
-   * Adds a {@link ParameterElementDeclaration custom parameter} to {@code this} enrichable element declaration
-   * This {@code customParameter} represents an additional parameter to the ones exposed by the actual model
-   * associated to this {@link ElementDeclaration element}.
-   * No validation of any kind will be performed over this {@code customParameter} and its value.
+   * Adds a {@link ParameterElementDeclaration custom parameter} to {@code this} enrichable element declaration This
+   * {@code customParameter} represents an additional parameter to the ones exposed by the actual model associated to this
+   * {@link ElementDeclaration element}. No validation of any kind will be performed over this {@code customParameter} and its
+   * value.
    *
    * @param name  the {@code name} of the {@link ParameterElementDeclaration}
    * @param value the {@code value} of the {@link ParameterElementDeclaration} to associate to {@code this} element declaration
