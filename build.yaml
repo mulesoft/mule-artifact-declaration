@@ -1,4 +1,4 @@
 upstreamProjects:
-  Mule-runtime/metadata-model-api/master
+  Mule-runtime/metadata-model-api/support/1.4.x
 mavenSettingsXmlId: mule-runtime-maven-settings-MuleSettings
 projectType: runtime
