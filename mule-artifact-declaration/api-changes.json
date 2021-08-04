@@ -10,7 +10,126 @@
           "methodName": "accept",
           "elementKind": "method",
           "justification": "Support visitor in order to walk the hierarchy"
-        }
+        },
+        {
+          "code": "java.method.abstractMethodAdded",
+          "new": "method void org.mule.runtime.app.declaration.api.ComponentElementDeclaration<T extends org.mule.runtime.app.declaration.api.ComponentElementDeclaration>::accept(org.mule.runtime.app.declaration.api.ComponentElementDeclarationVisitor)",
+          "package": "org.mule.runtime.app.declaration.api",
+          "classSimpleName": "ComponentElementDeclaration",
+          "methodName": "accept",
+          "elementKind": "method",
+          "justification": "Support visitor in order to walk the hierarchy. Also, no one should be extending these classes"
+        },
+        {
+           "code": "java.annotation.added",
+           "old": "class org.mule.runtime.app.declaration.api.ComponentElementDeclaration<T extends org.mule.runtime.app.declaration.api.ComponentElementDeclaration>",
+           "new": "class org.mule.runtime.app.declaration.api.ComponentElementDeclaration<T extends org.mule.runtime.app.declaration.api.ComponentElementDeclaration>",
+           "annotationType": "org.mule.api.annotation.NoExtend",
+           "annotation": "@org.mule.api.annotation.NoExtend",
+           "package": "org.mule.runtime.app.declaration.api",
+           "classSimpleName": "ComponentElementDeclaration",
+           "elementKind": "class",
+           "justification": "This class is not meant to be extended by the user"
+         },
+         {
+           "code": "java.annotation.added",
+           "old": "interface org.mule.runtime.app.declaration.api.CustomizableElementDeclaration",
+           "new": "interface org.mule.runtime.app.declaration.api.CustomizableElementDeclaration",
+           "annotationType": "org.mule.api.annotation.NoImplement",
+           "annotation": "@org.mule.api.annotation.NoImplement",
+           "package": "org.mule.runtime.app.declaration.api",
+           "classSimpleName": "CustomizableElementDeclaration",
+           "elementKind": "interface",
+           "justification": "This interface is not meant to be implemented by the user"
+         },
+         {
+           "code": "java.annotation.added",
+           "old": "class org.mule.runtime.app.declaration.api.ElementDeclaration",
+           "new": "class org.mule.runtime.app.declaration.api.ElementDeclaration",
+           "annotationType": "org.mule.api.annotation.NoExtend",
+           "annotation": "@org.mule.api.annotation.NoExtend",
+           "package": "org.mule.runtime.app.declaration.api",
+           "classSimpleName": "ElementDeclaration",
+           "elementKind": "class",
+           "justification": "This class is not meant to be extended by the user"
+         },
+         {
+           "code": "java.annotation.added",
+           "old": "class org.mule.runtime.app.declaration.api.EnrichableElementDeclaration",
+           "new": "class org.mule.runtime.app.declaration.api.EnrichableElementDeclaration",
+           "annotationType": "org.mule.api.annotation.NoExtend",
+           "annotation": "@org.mule.api.annotation.NoExtend",
+           "package": "org.mule.runtime.app.declaration.api",
+           "classSimpleName": "EnrichableElementDeclaration",
+           "elementKind": "class",
+           "justification": "This class is not meant to be extended by the user"
+         },
+         {
+           "code": "java.annotation.added",
+           "old": "interface org.mule.runtime.app.declaration.api.GlobalElementDeclaration",
+           "new": "interface org.mule.runtime.app.declaration.api.GlobalElementDeclaration",
+           "annotationType": "org.mule.api.annotation.NoImplement",
+           "annotation": "@org.mule.api.annotation.NoImplement",
+           "package": "org.mule.runtime.app.declaration.api",
+           "classSimpleName": "GlobalElementDeclaration",
+           "elementKind": "interface",
+           "justification": "This interface is not meant to be implemented by the user"
+         },
+         {
+           "code": "java.annotation.added",
+           "old": "interface org.mule.runtime.app.declaration.api.IdentifiableElementDeclaration",
+           "new": "interface org.mule.runtime.app.declaration.api.IdentifiableElementDeclaration",
+           "annotationType": "org.mule.api.annotation.NoImplement",
+           "annotation": "@org.mule.api.annotation.NoImplement",
+           "package": "org.mule.runtime.app.declaration.api",
+           "classSimpleName": "IdentifiableElementDeclaration",
+           "elementKind": "interface",
+           "justification": "This interface is not meant to be implemented by the user"
+         },
+         {
+           "code": "java.annotation.added",
+           "old": "interface org.mule.runtime.app.declaration.api.MetadataPropertiesAwareElementDeclaration",
+           "new": "interface org.mule.runtime.app.declaration.api.MetadataPropertiesAwareElementDeclaration",
+           "annotationType": "org.mule.api.annotation.NoImplement",
+           "annotation": "@org.mule.api.annotation.NoImplement",
+           "package": "org.mule.runtime.app.declaration.api",
+           "classSimpleName": "MetadataPropertiesAwareElementDeclaration",
+           "elementKind": "interface",
+           "justification": "This interface is not meant to be implemented by the user"
+         },
+         {
+           "code": "java.annotation.added",
+           "old": "interface org.mule.runtime.app.declaration.api.ParameterValueVisitor",
+           "new": "interface org.mule.runtime.app.declaration.api.ParameterValueVisitor",
+           "annotationType": "org.mule.api.annotation.NoImplement",
+           "annotation": "@org.mule.api.annotation.NoImplement",
+           "package": "org.mule.runtime.app.declaration.api",
+           "classSimpleName": "ParameterValueVisitor",
+           "elementKind": "interface",
+           "justification": "This interface is not meant to be implemented by the user"
+         },
+         {
+           "code": "java.annotation.added",
+           "old": "class org.mule.runtime.app.declaration.api.ParameterizedElementDeclaration",
+           "new": "class org.mule.runtime.app.declaration.api.ParameterizedElementDeclaration",
+           "annotationType": "org.mule.api.annotation.NoExtend",
+           "annotation": "@org.mule.api.annotation.NoExtend",
+           "package": "org.mule.runtime.app.declaration.api",
+           "classSimpleName": "ParameterizedElementDeclaration",
+           "elementKind": "class",
+           "justification": "This class is not meant to be extended by the user"
+         },
+         {
+           "code": "java.annotation.added",
+           "old": "interface org.mule.runtime.app.declaration.api.ReferableElementDeclaration",
+           "new": "interface org.mule.runtime.app.declaration.api.ReferableElementDeclaration",
+           "annotationType": "org.mule.api.annotation.NoImplement",
+           "annotation": "@org.mule.api.annotation.NoImplement",
+           "package": "org.mule.runtime.app.declaration.api",
+           "classSimpleName": "ReferableElementDeclaration",
+           "elementKind": "interface",
+           "justification": "This interface is not meant to be implemented by the user"
+         }
       ]
     }
   },

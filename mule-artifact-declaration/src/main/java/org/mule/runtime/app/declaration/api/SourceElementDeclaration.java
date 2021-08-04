@@ -19,4 +19,10 @@ public final class SourceElementDeclaration extends ComponentElementDeclaration 
     setDeclaringExtension(extension);
     setName(name);
   }
+
+  @Override
+  public void accept(ComponentElementDeclarationVisitor visitor) {
+    visitor.visitSourceElementDeclaration(this);
+  }
+
 }
