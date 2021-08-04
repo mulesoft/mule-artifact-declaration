@@ -8,6 +8,8 @@ package org.mule.runtime.app.declaration.api;
 
 import static java.util.Collections.unmodifiableMap;
 
+import org.mule.api.annotation.NoExtend;
+
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -20,6 +22,7 @@ import java.util.Optional;
  *
  * @since 1.0
  */
+@NoExtend
 public abstract class EnrichableElementDeclaration extends ElementDeclaration
     implements CustomizableElementDeclaration, MetadataPropertiesAwareElementDeclaration {
 

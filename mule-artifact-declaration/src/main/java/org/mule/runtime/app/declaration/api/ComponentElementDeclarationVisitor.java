@@ -6,6 +6,12 @@
  */
 package org.mule.runtime.app.declaration.api;
 
+import org.mule.runtime.app.declaration.api.ComponentElementDeclaration;
+import org.mule.runtime.app.declaration.api.ConstructElementDeclaration;
+import org.mule.runtime.app.declaration.api.OperationElementDeclaration;
+import org.mule.runtime.app.declaration.api.RouteElementDeclaration;
+import org.mule.runtime.app.declaration.api.SourceElementDeclaration;
+
 /**
  * Visitor that can handle all subclasses of {@link ComponentElementDeclaration}
  *

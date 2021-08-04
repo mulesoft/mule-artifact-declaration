@@ -6,6 +6,7 @@
  */
 package org.mule.runtime.app.declaration.api;
 
+import org.mule.api.annotation.NoImplement;
 import org.mule.runtime.app.declaration.api.fluent.ParameterListValue;
 import org.mule.runtime.app.declaration.api.fluent.ParameterObjectValue;
 import org.mule.runtime.app.declaration.api.fluent.ParameterSimpleValue;
@@ -15,6 +16,7 @@ import org.mule.runtime.app.declaration.api.fluent.ParameterSimpleValue;
  *
  * @since 1.0
  */
+@NoImplement
 public interface ParameterValueVisitor {
 
   default void visitSimpleValue(ParameterSimpleValue text) {
