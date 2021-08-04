@@ -32,6 +32,8 @@ public abstract class ComponentElementDeclaration<T extends ComponentElementDecl
 
   public ComponentElementDeclaration() {}
 
+  public abstract void accept(ComponentElementDeclarationVisitor visitor);
+
   /**
    * Sets the {@code config-ref} parameter required for {@code this} component
    * 
