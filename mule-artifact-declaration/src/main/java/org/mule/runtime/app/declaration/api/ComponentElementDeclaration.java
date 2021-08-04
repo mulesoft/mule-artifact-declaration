@@ -15,6 +15,8 @@ import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCod
 import static org.mule.runtime.app.declaration.api.component.location.Location.ERROR_HANDLER;
 import static org.mule.runtime.app.declaration.api.component.location.Location.PROCESSORS;
 
+import org.mule.api.annotation.NoExtend;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -24,6 +26,7 @@ import java.util.Optional;
  *
  * @since 1.0
  */
+@NoExtend
 public abstract class ComponentElementDeclaration<T extends ComponentElementDeclaration>
     extends ParameterizedElementDeclaration implements ElementDeclarationContainer {
 
