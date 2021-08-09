@@ -2,3 +2,5 @@ upstreamProjects:
   Mule-runtime/metadata-model-api/1.4.0
 mavenSettingsXmlId: mule-runtime-maven-settings-MuleSettings
 projectType: runtime
+devBranchesRegex: "1\\.4\\.0"
+
