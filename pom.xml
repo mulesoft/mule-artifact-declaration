@@ -105,6 +105,21 @@
         <module>mule-artifact-declaration-persistence</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junitVersion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit4</artifactId>
+            <version>${allureReportVersion}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <pluginManagement>
             <plugins>
