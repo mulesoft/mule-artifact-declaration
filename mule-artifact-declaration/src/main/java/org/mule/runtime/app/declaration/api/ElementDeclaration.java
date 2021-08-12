@@ -8,11 +8,14 @@ package org.mule.runtime.app.declaration.api;
 
 import static org.mule.runtime.app.declaration.internal.utils.Preconditions.checkArgument;
 
+import org.mule.api.annotation.NoExtend;
+
 /**
  * Base of a programmatic descriptor of the configuration for any element present in a mule application.
  *
  * @since 1.0
  */
+@NoExtend
 public abstract class ElementDeclaration implements IdentifiableElementDeclaration {
 
   protected String name;
