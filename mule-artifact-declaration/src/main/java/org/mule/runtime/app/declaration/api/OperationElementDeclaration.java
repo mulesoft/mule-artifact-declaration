@@ -19,4 +19,9 @@ public final class OperationElementDeclaration extends ComponentElementDeclarati
     setDeclaringExtension(extension);
     setName(name);
   }
+
+  @Override
+  public void accept(ComponentElementDeclarationVisitor visitor) {
+    visitor.visitOperationElementDeclaration(this);
+  }
 }

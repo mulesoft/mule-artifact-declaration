@@ -6,6 +6,8 @@
  */
 package org.mule.runtime.app.declaration.api;
 
+import org.mule.api.annotation.NoImplement;
+
 import java.util.List;
 
 /**
@@ -18,6 +20,7 @@ import java.util.List;
  *
  * @since 1.0
  */
+@NoImplement
 public interface CustomizableElementDeclaration {
 
   /**
