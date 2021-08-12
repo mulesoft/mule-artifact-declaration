@@ -12,6 +12,8 @@ import static java.util.Optional.empty;
 import static org.apache.commons.lang3.StringUtils.isNumeric;
 import static org.mule.runtime.app.declaration.api.component.location.Location.PARAMETERS;
 
+import org.mule.api.annotation.NoExtend;
+
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -23,6 +25,7 @@ import java.util.Optional;
  *
  * @since 1.0
  */
+@NoExtend
 public abstract class ParameterizedElementDeclaration extends EnrichableElementDeclaration
     implements ElementDeclarationContainer {
 

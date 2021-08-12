@@ -6,6 +6,8 @@
  */
 package org.mule.runtime.app.declaration.api;
 
+import org.mule.api.annotation.NoImplement;
+
 /**
  * An {@link ElementDeclaration} that can be present as a direct child of an {@link ArtifactDeclaration}. This implies that the
  * {@link ElementDeclaration} has to be also {@link IdentifiableElementDeclaration identifiable} and
@@ -13,6 +15,7 @@ package org.mule.runtime.app.declaration.api;
  *
  * @since 1.0
  */
+@NoImplement
 public interface GlobalElementDeclaration
     extends CustomizableElementDeclaration, ReferableElementDeclaration, IdentifiableElementDeclaration,
     ElementDeclarationContainer, MetadataPropertiesAwareElementDeclaration {

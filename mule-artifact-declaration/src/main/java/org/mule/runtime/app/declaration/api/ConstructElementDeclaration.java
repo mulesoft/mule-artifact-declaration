@@ -29,6 +29,11 @@ public final class ConstructElementDeclaration extends ComponentElementDeclarati
     setName(name);
   }
 
+  @Override
+  public void accept(ComponentElementDeclarationVisitor visitor) {
+    visitor.visitConstructElementDeclaration(this);
+  }
+
   /**
    * {@inheritDoc}
    */
