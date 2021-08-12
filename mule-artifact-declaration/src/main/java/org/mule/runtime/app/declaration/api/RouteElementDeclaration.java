@@ -18,4 +18,8 @@ public final class RouteElementDeclaration extends ComponentElementDeclaration<R
     setName(name);
   }
 
+  @Override
+  public void accept(ComponentElementDeclarationVisitor visitor) {
+    visitor.visitRouteElementDeclaration(this);
+  }
 }
