@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.mule.runtime</groupId>
     <artifactId>mule-artifact-declaration</artifactId>
-    <version>1.2.2-HF-SNAPSHOT</version>
+    <version>1.2.2-20210823</version>
     <packaging>jar</packaging>
     <name>Mule Artifact Declaration</name>
     <description>Mule Artifact Declaration</description>
