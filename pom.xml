@@ -95,7 +95,7 @@
         <build.helper.maven.plugin.version>3.0.0</build.helper.maven.plugin.version>
 
         <maven.site.plugin.version>3.9.0</maven.site.plugin.version>
-        <gsonVersion>2.8.5</gsonVersion>
+        <gsonVersion>2.8.9</gsonVersion>
         <junitVersion>4.12</junitVersion>
         <jsonassert.version>1.5.0</jsonassert.version>
     </properties>
