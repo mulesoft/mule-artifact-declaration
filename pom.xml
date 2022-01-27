@@ -75,7 +75,7 @@
         <javaVersion>1.8</javaVersion>
         <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
         <metadataModelApiVersion>1.5.0-SNAPSHOT</metadataModelApiVersion>
-        <muleModuleMavenPluginVersion>1.4.0-SNAPSHOT</muleModuleMavenPluginVersion>
+        <muleModuleMavenPluginVersion>1.4.0-20220125</muleModuleMavenPluginVersion>
         <xDocLint>-Xdoclint:none</xDocLint>
         <javaFormatter.plugin.version>2.14.0</javaFormatter.plugin.version>
         <formatterConfigPath>formatter.xml</formatterConfigPath>
