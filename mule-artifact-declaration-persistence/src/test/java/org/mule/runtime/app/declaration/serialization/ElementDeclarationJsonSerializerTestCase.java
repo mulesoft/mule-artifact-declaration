@@ -11,6 +11,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.hamcrest.core.IsNot.not;
+import static org.hamcrest.core.IsNull.notNullValue;
 import static org.mule.runtime.app.declaration.api.fluent.ElementDeclarer.newArtifact;
 import static org.mule.runtime.app.declaration.api.fluent.ElementDeclarer.newListValue;
 import static org.mule.runtime.app.declaration.api.fluent.ElementDeclarer.newObjectValue;
@@ -20,6 +21,11 @@ import static org.mule.runtime.app.declaration.api.fluent.ParameterSimpleValue.p
 import static org.mule.runtime.app.declaration.api.fluent.SimpleValueType.BOOLEAN;
 import static org.mule.runtime.app.declaration.api.fluent.SimpleValueType.NUMBER;
 import static org.mule.runtime.app.declaration.api.fluent.SimpleValueType.STRING;
+import static org.mule.runtime.app.declaration.serialization.impl.gson.GsonElementDeclarationJsonSerializer.configureGsonForElementDeclaration;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import org.apache.tika.io.IOUtils;
 import org.mule.runtime.app.declaration.api.ArtifactDeclaration;
 import org.mule.runtime.app.declaration.api.ComponentElementDeclaration;
 import org.mule.runtime.app.declaration.api.ConfigurationElementDeclaration;
@@ -29,7 +35,9 @@ import org.mule.runtime.app.declaration.api.GlobalElementDeclarationVisitor;
 import org.mule.runtime.app.declaration.api.ParameterElementDeclaration;
 import org.mule.runtime.app.declaration.api.ParameterGroupElementDeclaration;
 import org.mule.runtime.app.declaration.api.ParameterValue;
+import org.mule.runtime.app.declaration.api.SourceElementDeclaration;
 import org.mule.runtime.app.declaration.api.TopLevelParameterDeclaration;
+import org.mule.runtime.app.declaration.api.component.location.Location;
 import org.mule.runtime.app.declaration.api.fluent.ElementDeclarer;
 import org.mule.runtime.app.declaration.api.fluent.ParameterObjectValue;
 import org.mule.runtime.app.declaration.api.fluent.SimpleValueType;
@@ -39,18 +47,23 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.stream.JsonReader;
 
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.List;
+import java.util.Map;
 
 import org.json.JSONException;
 import org.junit.Before;
 import org.junit.Test;
+
 import org.skyscreamer.jsonassert.JSONAssert;
 
 public class ElementDeclarationJsonSerializerTestCase {
 
   private static final String CONNECTION = "Connection";
   private static final String NS_MULE_DOCUMENTATION = "http://www.mulesoft.org/schema/mule/documentation";
+  private static final String DECLARING_EXTENSION_KEY = "declaringExtension";
+  private static final String NAME_KEY = "name";
 
   private ArtifactDeclaration applicationDeclaration;
 
@@ -67,6 +80,26 @@ public class ElementDeclarationJsonSerializerTestCase {
     JsonElement expected = parser.parse(reader);
     JsonElement json = parser.parse(ElementDeclarationJsonSerializer.getDefault(true).serialize(applicationDeclaration));
     assertThat(json, is(equalTo(expected)));
+  }
+
+  @Test
+  public void whenConfigRefIsNullIntoComponentElementDeclarationThenItShouldNotFailWhenItIsSerializedOrDeserialized() throws IOException {
+    Gson gson = configureGsonForElementDeclaration(new GsonBuilder()).create();
+    String elementString = IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream(getComponentElementDeclarationWithoutConfigRef()));
+    Map<String, Object> expectedValues = gson.fromJson(elementString, Map.class);
+
+    // Deserialization
+    ComponentElementDeclaration componentElementDeclaration = gson.fromJson(elementString,ComponentElementDeclaration.class);
+    assertThat(componentElementDeclaration instanceof SourceElementDeclaration, is(true));
+    assertThat(componentElementDeclaration.getDeclaringExtension(), is(expectedValues.get(DECLARING_EXTENSION_KEY)));
+    assertThat(componentElementDeclaration.getName(), is(expectedValues.get(NAME_KEY)));
+
+    // Serialization
+    String elementJsonString = gson.toJson(componentElementDeclaration);
+    assertThat(elementJsonString, is(notNullValue()));
+    assertThat(elementJsonString.contains(expectedValues.get(DECLARING_EXTENSION_KEY).toString()), is(true));
+    assertThat(elementJsonString.contains(expectedValues.get(NAME_KEY).toString()), is(true));
+    assertThat(elementJsonString.contains(Location.SOURCE.toUpperCase()), is(true));
   }
 
   @Test
@@ -526,6 +559,10 @@ public class ElementDeclarationJsonSerializerTestCase {
 
   protected String getExpectedArtifactDeclarationJson() {
     return "declaration/artifact-declaration.json";
+  }
+
+  private String getComponentElementDeclarationWithoutConfigRef() {
+    return "declaration/component-element-declaration-without-config-ref.json";
   }
 
   private ParameterValue createNumberParameter(String value) {

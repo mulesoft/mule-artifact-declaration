@@ -1,0 +1,13 @@
+{
+  "components": [],
+  "kind": "SOURCE",
+  "configRef": null,
+  "customParameters": [],
+  "declaringExtension": "citizen-scheduler",
+  "groups": {},
+  "name": "IntervalInfoSource",
+  "properties": {},
+  "customConfigurationParameters": [],
+  "metadataProperties": {},
+  "parameterGroups": []
+}
