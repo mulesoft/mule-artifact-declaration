@@ -83,13 +83,15 @@ public class ElementDeclarationJsonSerializerTestCase {
   }
 
   @Test
-  public void whenConfigRefIsNullIntoComponentElementDeclarationThenItShouldNotFailWhenItIsSerializedOrDeserialized() throws IOException {
+  public void whenConfigRefIsNullIntoComponentElementDeclarationThenItShouldNotFailWhenItIsSerializedOrDeserialized()
+      throws IOException {
     Gson gson = configureGsonForElementDeclaration(new GsonBuilder()).create();
-    String elementString = IOUtils.toString(Thread.currentThread().getContextClassLoader().getResourceAsStream(getComponentElementDeclarationWithoutConfigRef()));
+    String elementString = IOUtils.toString(Thread.currentThread().getContextClassLoader()
+        .getResourceAsStream(getComponentElementDeclarationWithoutConfigRef()));
     Map<String, Object> expectedValues = gson.fromJson(elementString, Map.class);
 
     // Deserialization
-    ComponentElementDeclaration componentElementDeclaration = gson.fromJson(elementString,ComponentElementDeclaration.class);
+    ComponentElementDeclaration componentElementDeclaration = gson.fromJson(elementString, ComponentElementDeclaration.class);
     assertThat(componentElementDeclaration instanceof SourceElementDeclaration, is(true));
     assertThat(componentElementDeclaration.getDeclaringExtension(), is(expectedValues.get(DECLARING_EXTENSION_KEY)));
     assertThat(componentElementDeclaration.getName(), is(expectedValues.get(NAME_KEY)));
