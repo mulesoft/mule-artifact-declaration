@@ -6,8 +6,10 @@
  */
 package org.mule.runtime.app.declaration.api;
 
-import static java.util.Optional.empty;
 import static org.mule.runtime.app.declaration.api.component.location.Location.SOURCE;
+
+import static java.util.Objects.hash;
+import static java.util.Optional.empty;
 
 import java.util.List;
 import java.util.Objects;
@@ -97,6 +99,6 @@ public final class ConstructElementDeclaration extends ComponentElementDeclarati
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), elementName);
+    return hash(super.hashCode(), elementName);
   }
 }

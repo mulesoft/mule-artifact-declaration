@@ -11,6 +11,7 @@ import static org.mule.runtime.app.declaration.api.component.location.Location.P
 
 import static java.lang.Integer.parseInt;
 import static java.util.Collections.unmodifiableList;
+import static java.util.Objects.hash;
 import static java.util.Optional.empty;
 
 import static org.apache.commons.lang3.StringUtils.isNumeric;
@@ -32,11 +33,7 @@ public abstract class ComponentElementDeclaration<T extends ComponentElementDecl
     extends ParameterizedElementDeclaration implements ElementDeclarationContainer {
 
   private String configRef;
-  private List<ComponentElementDeclaration> components = new LinkedList<>().equals();
-
-  public void test() {
-    components.equals()
-  }
+  private List<ComponentElementDeclaration> components = new LinkedList<>();
 
   public ComponentElementDeclaration() {}
 
@@ -155,6 +152,6 @@ public abstract class ComponentElementDeclaration<T extends ComponentElementDecl
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode(), configRef, components);
+    return hash(super.hashCode(), configRef, components);
   }
 }
