@@ -10,6 +10,7 @@ import static java.util.Optional.empty;
 import static org.mule.runtime.app.declaration.api.component.location.Location.SOURCE;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -79,4 +80,23 @@ public final class ConstructElementDeclaration extends ComponentElementDeclarati
     this.elementName = referableName;
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    if (!super.equals(o)) {
+      return false;
+    }
+    ConstructElementDeclaration that = (ConstructElementDeclaration) o;
+    return Objects.equals(elementName, that.elementName);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(super.hashCode(), elementName);
+  }
 }
