@@ -6,19 +6,21 @@
  */
 package org.mule.runtime.app.declaration.api;
 
-import static java.lang.Integer.parseInt;
-import static java.util.Collections.unmodifiableList;
-import static java.util.Optional.empty;
-import static org.apache.commons.lang3.StringUtils.isNumeric;
-import static org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals;
-import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode;
 import static org.mule.runtime.app.declaration.api.component.location.Location.ERROR_HANDLER;
 import static org.mule.runtime.app.declaration.api.component.location.Location.PROCESSORS;
+
+import static java.lang.Integer.parseInt;
+import static java.util.Collections.unmodifiableList;
+import static java.util.Objects.hash;
+import static java.util.Optional.empty;
+
+import static org.apache.commons.lang3.StringUtils.isNumeric;
 
 import org.mule.api.annotation.NoExtend;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -138,15 +140,18 @@ public abstract class ComponentElementDeclaration<T extends ComponentElementDecl
     if (this == o) {
       return true;
     }
-    if (o == null || getClass() != o.getClass() || !super.equals(o)) {
+    if (o == null || getClass() != o.getClass()) {
       return false;
     }
-
-    return reflectionEquals(this, o);
+    if (!super.equals(o)) {
+      return false;
+    }
+    ComponentElementDeclaration<?> that = (ComponentElementDeclaration<?>) o;
+    return Objects.equals(configRef, that.configRef) && Objects.equals(components, that.components);
   }
 
   @Override
   public int hashCode() {
-    return reflectionHashCode(this);
+    return hash(super.hashCode(), configRef, components);
   }
 }
