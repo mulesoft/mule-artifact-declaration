@@ -5,9 +5,15 @@
  * LICENSE.txt file.
  */
 
-module org.mule.artifactDeclaration.persistence {
+/**
+ * Mule Artifact Declaration persistence layer.
+ * 
+ * @moduleGraph
+ * @since 1.6
+ */
+module org.mule.runtime.artifact.declaration.persistence {
 
-  requires org.mule.artifactDeclaration;
+  requires org.mule.runtime.artifact.declaration;
 
   requires com.google.gson;
 

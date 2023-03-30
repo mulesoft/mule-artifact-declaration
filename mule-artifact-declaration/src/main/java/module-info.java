@@ -5,10 +5,18 @@
  * LICENSE.txt file.
  */
 
-module org.mule.artifactDeclaration {
+/**
+ * Mule Artifact Declaration.
+ * 
+ * @deprecated use {@code org.mule.runtime.artifact.ast} instead.
+ * 
+ * @moduleGraph
+ * @since 1.6
+ */
+module org.mule.runtime.artifact.declaration {
   
-  requires org.mule.runtime.apiAnnotations;
-  requires org.mule.metadata.model.api;
+  requires org.mule.runtime.api.annotations;
+  requires org.mule.runtime.metadata.model.api;
   
   requires org.apache.commons.lang3;
   
