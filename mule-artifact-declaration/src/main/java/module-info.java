@@ -24,6 +24,9 @@ module org.mule.runtime.artifact.declaration {
   exports org.mule.runtime.app.declaration.api.fluent;
   exports org.mule.runtime.app.declaration.api.component.location;
 
+  exports org.mule.runtime.app.declaration.internal.utils to
+      org.mule.runtime.artifact;
+
   // Allow introspection for serialization/deserialization by Gson
   opens org.mule.runtime.app.declaration.api to
       com.google.gson;
