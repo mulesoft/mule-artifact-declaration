@@ -94,7 +94,7 @@ class ComponentElementDeclarationTypeAdapter extends TypeAdapter<ComponentElemen
         }
 
         JsonElement configRef = jsonObject.get(CONFIG_REF);
-        if (configRef != null && declarer instanceof ComponentElementDeclarer) {
+        if (configRef != null && !configRef.isJsonNull() && declarer instanceof ComponentElementDeclarer) {
           ((ComponentElementDeclarer) declarer).withConfig(configRef.getAsString());
         }
 
