@@ -11,7 +11,7 @@
  * @deprecated use {@code org.mule.runtime.artifact.ast} instead.
  * 
  * @moduleGraph
- * @since 1.6
+ * @since 1.5
  */
 module org.mule.runtime.artifact.declaration {
   
