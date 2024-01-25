@@ -92,7 +92,7 @@
         <aspectjVersion>1.9.2</aspectjVersion>
         <allureReportVersion>2.8.1</allureReportVersion>
         <allure.maven.plugin.version>2.9</allure.maven.plugin.version>
-        <jacoco.version>0.8.8</jacoco.version>
+        <jacoco.version>0.8.11</jacoco.version>
 
         <maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
         <revapi-maven-plugin.version>0.15.0</revapi-maven-plugin.version>
