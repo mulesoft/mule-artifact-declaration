@@ -97,7 +97,7 @@
         <maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
         <revapi-maven-plugin.version>0.15.0</revapi-maven-plugin.version>
         <oldMuleArtifactVersion>1.6.0</oldMuleArtifactVersion>
-        <muleRevapiExtensionVersion>1.6.2-SNAPSHOT</muleRevapiExtensionVersion>
+        <muleRevapiExtensionVersion>1.6.2-rc1</muleRevapiExtensionVersion>
         <build.helper.maven.plugin.version>3.0.0</build.helper.maven.plugin.version>
 
         <muleBomVersion>4.6.1-SNAPSHOT</muleBomVersion>
