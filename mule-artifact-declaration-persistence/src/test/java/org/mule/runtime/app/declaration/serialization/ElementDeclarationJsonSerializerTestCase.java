@@ -25,7 +25,7 @@ import static org.mule.runtime.app.declaration.serialization.impl.gson.GsonEleme
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import org.apache.tika.io.IOUtils;
+import org.apache.commons.io.IOUtils;
 import org.mule.runtime.app.declaration.api.ArtifactDeclaration;
 import org.mule.runtime.app.declaration.api.ComponentElementDeclaration;
 import org.mule.runtime.app.declaration.api.ConfigurationElementDeclaration;
