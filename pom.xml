@@ -90,10 +90,6 @@
         <oldMuleArtifactVersion>1.7.0-rc1</oldMuleArtifactVersion>
 
         <muleBomVersion>4.9.0-SNAPSHOT</muleBomVersion>
-
-        <junitVersion>4.13.2</junitVersion>
-        <hamcrestVersion>1.3</hamcrestVersion>
-        <jsonassert.version>1.5.2</jsonassert.version>
     </properties>
 
     <modules>
@@ -110,6 +106,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>org.mule</groupId>
+                <artifactId>mule-tests-bom</artifactId>
+                <version>${muleBomVersion}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -117,13 +120,11 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>${junitVersion}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-            <version>${hamcrestVersion}</version>
+            <artifactId>hamcrest</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
