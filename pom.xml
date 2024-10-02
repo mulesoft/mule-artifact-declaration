@@ -87,7 +87,7 @@
         <licensePath>LICENSE_HEADER_CPAL.txt</licensePath>
         <licenseYear>2023</licenseYear>
 
-        <oldMuleArtifactVersion>1.7.0-rc1</oldMuleArtifactVersion>
+        <oldMuleArtifactVersion>1.8.0</oldMuleArtifactVersion>
 
         <muleBomVersion>4.9.0-SNAPSHOT</muleBomVersion>
     </properties>
@@ -218,6 +218,13 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.revapi</groupId>
+                    <artifactId>revapi-maven-plugin</artifactId>
+                    <configuration>
+                        <oldVersion>${oldMuleArtifactVersion}</oldVersion>
+                    </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
