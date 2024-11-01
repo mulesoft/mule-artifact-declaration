@@ -257,6 +257,32 @@
     </build>
 
 
+    <profiles>
+        <profile>
+            <id>release</id>
+            <properties>
+                <skipGpg>false</skipGpg>
+                <skipNoSnapshotsEnforcerPluginRule>false</skipNoSnapshotsEnforcerPluginRule>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
     <distributionManagement>
         <repository>
             <id>mule-releases</id>
