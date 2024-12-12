@@ -88,7 +88,7 @@
         <licensePath>LICENSE_HEADER_CPAL.txt</licensePath>
         <licenseYear>2023</licenseYear>
 
-        <oldMuleArtifactVersion>1.8.0</oldMuleArtifactVersion>
+        <oldMuleArtifactVersion>1.7.0-rc1</oldMuleArtifactVersion>
 
         <muleBomVersion>4.9.0-SNAPSHOT</muleBomVersion>
     </properties>
