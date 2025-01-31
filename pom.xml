@@ -90,7 +90,7 @@
 
         <oldMuleArtifactVersion>1.8.0</oldMuleArtifactVersion>
 
-        <muleBomVersion>4.9.0-rc4</muleBomVersion>
+        <muleBomVersion>4.9.0</muleBomVersion>
     </properties>
 
     <modules>
