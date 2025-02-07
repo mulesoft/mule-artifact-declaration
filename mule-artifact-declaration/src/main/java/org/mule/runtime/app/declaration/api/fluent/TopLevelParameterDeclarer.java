@@ -12,7 +12,9 @@ import org.mule.runtime.app.declaration.api.TopLevelParameterDeclaration;
  * Allows configuring an {@link TopLevelParameterDeclaration} through a fluent API
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class TopLevelParameterDeclarer
     extends EnrichableElementDeclarer<TopLevelParameterDeclarer, TopLevelParameterDeclaration> {
 

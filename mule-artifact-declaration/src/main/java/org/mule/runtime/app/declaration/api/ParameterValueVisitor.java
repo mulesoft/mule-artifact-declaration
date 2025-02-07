@@ -15,8 +15,10 @@ import org.mule.runtime.app.declaration.api.fluent.ParameterSimpleValue;
  * Used in {@link ParameterValue#accept(ParameterValueVisitor)} as a visitor pattern.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
 @NoImplement
+@Deprecated
 public interface ParameterValueVisitor {
 
   default void visitSimpleValue(ParameterSimpleValue text) {

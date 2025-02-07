@@ -16,8 +16,10 @@ import java.util.Optional;
  * is defined as any {@link ElementDeclaration} that contains any another {@link ElementDeclaration} of any kind.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
 @NoImplement
+@Deprecated
 public interface ElementDeclarationContainer {
 
   /**

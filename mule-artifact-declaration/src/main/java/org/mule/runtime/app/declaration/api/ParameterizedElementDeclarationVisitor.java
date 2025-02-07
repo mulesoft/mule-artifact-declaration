@@ -12,8 +12,10 @@ import org.mule.api.annotation.NoImplement;
  * Used in {@link ParameterizedElementDeclaration#accept(ParameterizedElementDeclarationVisitor)} as a visitor pattern.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
 @NoImplement
+@Deprecated
 public interface ParameterizedElementDeclarationVisitor {
 
   default void visitConfigurationElementDeclaration(ConfigurationElementDeclaration configurationElementDeclaration) {

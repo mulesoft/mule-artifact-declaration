@@ -14,8 +14,10 @@ import org.mule.api.annotation.NoImplement;
  * {@link ReferableElementDeclaration referable}.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
 @NoImplement
+@Deprecated
 public interface GlobalElementDeclaration
     extends CustomizableElementDeclaration, ReferableElementDeclaration, IdentifiableElementDeclaration,
     ElementDeclarationContainer, MetadataPropertiesAwareElementDeclaration {

@@ -10,7 +10,9 @@ package org.mule.runtime.app.declaration.api.fluent;
  * Represents the type of a {@link ParameterSimpleValue}'s value
  *
  * @since 1.2
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public enum SimpleValueType {
 
   /**

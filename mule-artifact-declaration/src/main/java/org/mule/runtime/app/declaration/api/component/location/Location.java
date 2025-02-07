@@ -6,10 +6,12 @@
  */
 package org.mule.runtime.app.declaration.api.component.location;
 
-import static java.lang.String.join;
-import static org.apache.commons.lang3.StringUtils.isNumeric;
 import static org.mule.runtime.app.declaration.internal.utils.NameValidationUtil.verifyStringDoesNotContainsReservedCharacters;
 import static org.mule.runtime.app.declaration.internal.utils.Preconditions.checkState;
+
+import static java.lang.String.join;
+
+import static org.apache.commons.lang3.StringUtils.isNumeric;
 
 import org.mule.api.annotation.NoImplement;
 
@@ -25,8 +27,10 @@ import java.util.List;
  * the global element name and the parts separated by an slash character.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
 @NoImplement
+@Deprecated
 public interface Location {
 
   String SOURCE = "source";

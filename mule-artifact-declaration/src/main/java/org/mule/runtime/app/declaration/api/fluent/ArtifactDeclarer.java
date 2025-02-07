@@ -13,7 +13,9 @@ import org.mule.runtime.app.declaration.api.GlobalElementDeclaration;
  * Allows configuring an {@link ArtifactDeclaration} through a fluent API
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class ArtifactDeclarer extends EnrichableElementDeclarer<ArtifactDeclarer, ArtifactDeclaration> {
 
   ArtifactDeclarer(ArtifactDeclaration declaration) {

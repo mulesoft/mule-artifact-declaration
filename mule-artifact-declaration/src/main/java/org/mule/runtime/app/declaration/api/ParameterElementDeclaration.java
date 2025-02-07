@@ -6,8 +6,9 @@
  */
 package org.mule.runtime.app.declaration.api;
 
-import static java.util.Collections.unmodifiableMap;
 import static org.mule.runtime.app.declaration.internal.utils.Preconditions.checkArgument;
+
+import static java.util.Collections.unmodifiableMap;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -18,7 +19,9 @@ import java.util.Optional;
  * A programmatic descriptor of a {@link org.mule.runtime.api.meta.model.parameter.ParameterModel} configuration.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class ParameterElementDeclaration extends ElementDeclaration implements MetadataPropertiesAwareElementDeclaration {
 
   private ParameterValue value;
@@ -70,6 +73,7 @@ public final class ParameterElementDeclaration extends ElementDeclaration implem
   /**
    * {@inheritDoc}
    */
+  @Override
   public Optional<Serializable> getMetadataProperty(String name) {
     return Optional.ofNullable(properties.get(name));
   }
@@ -77,6 +81,7 @@ public final class ParameterElementDeclaration extends ElementDeclaration implem
   /**
    * {@inheritDoc}
    */
+  @Override
   public Map<String, Serializable> getMetadataProperties() {
     return unmodifiableMap(properties);
   }
@@ -84,6 +89,7 @@ public final class ParameterElementDeclaration extends ElementDeclaration implem
   /**
    * {@inheritDoc}
    */
+  @Override
   public void addMetadataProperty(String name, Serializable value) {
     properties.put(name, value);
   }

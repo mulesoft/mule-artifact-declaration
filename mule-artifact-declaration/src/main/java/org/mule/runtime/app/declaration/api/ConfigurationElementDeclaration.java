@@ -16,7 +16,9 @@ import java.util.Optional;
  * A programmatic descriptor of a {@link org.mule.runtime.api.meta.model.config.ConfigurationModel} configuration.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class ConfigurationElementDeclaration extends ParameterizedElementDeclaration
     implements GlobalElementDeclaration {
 

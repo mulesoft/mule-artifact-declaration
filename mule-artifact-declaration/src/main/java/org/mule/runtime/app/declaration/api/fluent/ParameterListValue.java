@@ -7,6 +7,7 @@
 package org.mule.runtime.app.declaration.api.fluent;
 
 import static java.util.Collections.unmodifiableList;
+
 import org.mule.runtime.app.declaration.api.ParameterElementDeclaration;
 import org.mule.runtime.app.declaration.api.ParameterValue;
 import org.mule.runtime.app.declaration.api.ParameterValueVisitor;
@@ -18,7 +19,9 @@ import java.util.List;
  * Represents the configured {@link List} of {@link ParameterValue}s of a given {@link ParameterElementDeclaration}.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class ParameterListValue implements ParameterValue {
 
   private List<ParameterValue> values = new LinkedList<>();

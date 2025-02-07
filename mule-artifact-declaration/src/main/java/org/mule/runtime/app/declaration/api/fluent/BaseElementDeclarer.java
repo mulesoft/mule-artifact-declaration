@@ -13,7 +13,9 @@ import org.mule.runtime.app.declaration.api.ElementDeclaration;
  * Base declarer for a given {@link ElementDeclaration}
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public abstract class BaseElementDeclarer<T> {
 
   protected T declaration;

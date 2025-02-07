@@ -21,8 +21,10 @@ import java.util.Optional;
  * A programmatic descriptor of an {@link ElementDeclaration} that can be enriched with custom properties and parameters.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
 @NoExtend
+@Deprecated
 public abstract class EnrichableElementDeclaration extends ElementDeclaration
     implements CustomizableElementDeclaration, MetadataPropertiesAwareElementDeclaration {
 
@@ -34,6 +36,7 @@ public abstract class EnrichableElementDeclaration extends ElementDeclaration
   /**
    * {@inheritDoc}
    */
+  @Override
   public List<ParameterElementDeclaration> getCustomConfigurationParameters() {
     return customParameters;
   }
@@ -41,6 +44,7 @@ public abstract class EnrichableElementDeclaration extends ElementDeclaration
   /**
    * {@inheritDoc}
    */
+  @Override
   public void addCustomConfigurationParameter(ParameterElementDeclaration customParameter) {
     this.customParameters.add(customParameter);
   }
@@ -48,6 +52,7 @@ public abstract class EnrichableElementDeclaration extends ElementDeclaration
   /**
    * {@inheritDoc}
    */
+  @Override
   public Optional<Serializable> getMetadataProperty(String name) {
     return Optional.ofNullable(properties.get(name));
   }
@@ -55,6 +60,7 @@ public abstract class EnrichableElementDeclaration extends ElementDeclaration
   /**
    * {@inheritDoc}
    */
+  @Override
   public Map<String, Serializable> getMetadataProperties() {
     return unmodifiableMap(properties);
   }
@@ -62,6 +68,7 @@ public abstract class EnrichableElementDeclaration extends ElementDeclaration
   /**
    * {@inheritDoc}
    */
+  @Override
   public void addMetadataProperty(String name, Serializable value) {
     properties.put(name, value);
   }

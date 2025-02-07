@@ -7,6 +7,7 @@
 package org.mule.runtime.app.declaration.api;
 
 import static java.util.Collections.unmodifiableList;
+
 import org.mule.runtime.app.declaration.api.component.location.Location;
 
 import java.util.LinkedList;
@@ -17,7 +18,9 @@ import java.util.Optional;
  * A programmatic descriptor of a mule artifact configuration.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class ArtifactDeclaration extends EnrichableElementDeclaration {
 
   private List<GlobalElementDeclaration> globalElements = new LinkedList<>();

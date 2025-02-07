@@ -7,9 +7,12 @@
 /**
  * Mule Artifact Declaration persistence layer.
  * 
+ * @deprecated use {@code org.mule.runtime.artifact.ast} instead.
+ * 
  * @moduleGraph
  * @since 1.5
  */
+@Deprecated(since = "4.10", forRemoval = true)
 module org.mule.runtime.artifact.declaration.persistence {
 
   requires org.mule.runtime.artifact.declaration;

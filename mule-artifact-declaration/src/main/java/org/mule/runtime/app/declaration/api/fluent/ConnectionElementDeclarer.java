@@ -12,7 +12,9 @@ import org.mule.runtime.app.declaration.api.ConnectionElementDeclaration;
  * Allows configuring an {@link ConnectionElementDeclaration} through a fluent API
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class ConnectionElementDeclarer
     extends ParameterizedElementDeclarer<ConnectionElementDeclarer, ConnectionElementDeclaration> {
 

@@ -12,8 +12,10 @@ import org.mule.api.annotation.NoImplement;
  * Used in {@link GlobalElementDeclaration#accept(GlobalElementDeclarationVisitor)} as a visitor pattern.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
 @NoImplement
+@Deprecated
 public interface GlobalElementDeclarationVisitor {
 
   default void visit(ConfigurationElementDeclaration declaration) {

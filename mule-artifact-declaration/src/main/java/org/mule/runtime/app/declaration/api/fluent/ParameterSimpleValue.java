@@ -6,12 +6,15 @@
  */
 package org.mule.runtime.app.declaration.api.fluent;
 
+import static org.mule.runtime.app.declaration.api.fluent.SimpleValueType.STRING;
+
 import static java.util.regex.Pattern.DOTALL;
 import static java.util.regex.Pattern.MULTILINE;
 import static java.util.regex.Pattern.compile;
+
 import static org.apache.commons.lang3.StringUtils.removeEnd;
 import static org.apache.commons.lang3.StringUtils.removeStart;
-import static org.mule.runtime.app.declaration.api.fluent.SimpleValueType.STRING;
+
 import org.mule.runtime.app.declaration.api.ParameterElementDeclaration;
 import org.mule.runtime.app.declaration.api.ParameterValue;
 import org.mule.runtime.app.declaration.api.ParameterValueVisitor;
@@ -23,7 +26,9 @@ import java.util.regex.Pattern;
  * Represents the configured simple value of a given {@link ParameterElementDeclaration}.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class ParameterSimpleValue implements ParameterValue {
 
   private static final Pattern CDATA = compile("^<!\\[CDATA\\[(.+)\\]\\]>$", DOTALL | MULTILINE);

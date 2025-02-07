@@ -15,7 +15,9 @@ import org.mule.runtime.app.declaration.serialization.impl.gson.GsonElementDecla
  * {@link String} to an {@link ElementDeclaration} instance
  *
  * @since 1.4.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public interface ElementDeclarationJsonSerializer {
 
   /**

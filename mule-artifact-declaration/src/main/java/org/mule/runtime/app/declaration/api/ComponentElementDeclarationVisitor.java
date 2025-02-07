@@ -6,17 +6,13 @@
  */
 package org.mule.runtime.app.declaration.api;
 
-import org.mule.runtime.app.declaration.api.ComponentElementDeclaration;
-import org.mule.runtime.app.declaration.api.ConstructElementDeclaration;
-import org.mule.runtime.app.declaration.api.OperationElementDeclaration;
-import org.mule.runtime.app.declaration.api.RouteElementDeclaration;
-import org.mule.runtime.app.declaration.api.SourceElementDeclaration;
-
 /**
  * Visitor that can handle all subclasses of {@link ComponentElementDeclaration}
  *
  * @since 1.4.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public interface ComponentElementDeclarationVisitor {
 
   default void visitConstructElementDeclaration(ConstructElementDeclaration constructElementDeclaration) {

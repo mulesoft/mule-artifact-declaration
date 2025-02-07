@@ -7,6 +7,7 @@
 package org.mule.runtime.app.declaration.api;
 
 import static org.mule.runtime.app.declaration.internal.utils.Preconditions.checkArgument;
+
 import org.mule.metadata.api.model.ObjectType;
 import org.mule.runtime.app.declaration.api.fluent.ParameterObjectValue;
 
@@ -17,7 +18,9 @@ import java.util.Optional;
  * A programmatic descriptor of an {@link ObjectType} configuration that will be used as a global element of the mule application.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class TopLevelParameterDeclaration extends EnrichableElementDeclaration
     implements ReferableElementDeclaration, GlobalElementDeclaration {
 
