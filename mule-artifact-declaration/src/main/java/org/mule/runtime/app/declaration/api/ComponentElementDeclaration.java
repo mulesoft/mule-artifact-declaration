@@ -27,8 +27,10 @@ import java.util.Optional;
  * A programmatic descriptor of a {@link org.mule.runtime.api.meta.model.ComponentModel} configuration.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
 @NoExtend
+@Deprecated
 public abstract class ComponentElementDeclaration<T extends ComponentElementDeclaration>
     extends ParameterizedElementDeclaration implements ElementDeclarationContainer {
 

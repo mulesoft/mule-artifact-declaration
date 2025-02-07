@@ -15,8 +15,10 @@ import java.util.function.Consumer;
  * Allows configuring a nested {@link RouteElementDeclaration} through a fluent API
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
 @NoImplement
+@Deprecated
 public interface HasNestedRoutesDeclaration<T extends BaseElementDeclarer> {
 
   /**

@@ -12,7 +12,9 @@ import org.mule.runtime.app.declaration.api.ConstructElementDeclaration;
  * Allows configuring a {@link ConstructElementDeclaration} through a fluent API
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class ConstructElementDeclarer
     extends ComponentElementDeclarer<ConstructElementDeclarer, ConstructElementDeclaration> {
 

@@ -6,8 +6,9 @@
  */
 package org.mule.runtime.app.declaration.api.fluent;
 
-import static java.lang.String.format;
 import static org.mule.runtime.app.declaration.internal.utils.Preconditions.checkArgument;
+
+import static java.lang.String.format;
 
 import org.mule.runtime.app.declaration.api.ComponentElementDeclaration;
 import org.mule.runtime.app.declaration.api.RouteElementDeclaration;
@@ -16,7 +17,9 @@ import org.mule.runtime.app.declaration.api.RouteElementDeclaration;
  * Allows configuring a {@link RouteElementDeclaration} through a fluent API
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class RouteElementDeclarer
     extends ParameterizedElementDeclarer<RouteElementDeclarer, RouteElementDeclaration>
     implements HasNestedComponentDeclarer<RouteElementDeclarer> {

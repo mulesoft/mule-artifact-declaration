@@ -16,7 +16,9 @@ import java.io.Serializable;
  * Allows configuring an {@link EnrichableElementDeclaration} through a fluent API
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public abstract class EnrichableElementDeclarer<D extends EnrichableElementDeclarer, T extends EnrichableElementDeclaration>
     extends BaseElementDeclarer<T> {
 

@@ -13,8 +13,10 @@ import org.mule.runtime.app.declaration.api.ComponentElementDeclaration;
  * Allows configuring a nested {@link ComponentElementDeclaration} through a fluent API
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
 @NoImplement
+@Deprecated
 public interface HasNestedComponentDeclarer<T extends BaseElementDeclarer> {
 
   /**

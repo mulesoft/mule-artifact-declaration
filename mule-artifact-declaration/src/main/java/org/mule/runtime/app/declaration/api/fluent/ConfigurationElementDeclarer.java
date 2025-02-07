@@ -13,7 +13,9 @@ import org.mule.runtime.app.declaration.api.ConnectionElementDeclaration;
  * Allows configuring an {@link ConfigurationElementDeclaration} through a fluent API
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class ConfigurationElementDeclarer
     extends ParameterizedElementDeclarer<ConfigurationElementDeclarer, ConfigurationElementDeclaration> {
 

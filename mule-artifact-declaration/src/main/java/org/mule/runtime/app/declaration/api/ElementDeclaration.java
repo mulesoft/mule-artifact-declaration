@@ -14,8 +14,10 @@ import org.mule.api.annotation.NoExtend;
  * Base of a programmatic descriptor of the configuration for any element present in a mule application.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
 @NoExtend
+@Deprecated
 public abstract class ElementDeclaration implements IdentifiableElementDeclaration {
 
   protected String name;

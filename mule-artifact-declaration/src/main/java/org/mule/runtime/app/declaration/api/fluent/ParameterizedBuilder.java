@@ -11,7 +11,9 @@ package org.mule.runtime.app.declaration.api.fluent;
  * {@link V} using a builder pattern with return type {@link R}
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public interface ParameterizedBuilder<K, V, R> {
 
   R withParameter(K key, V value);

@@ -20,8 +20,10 @@ import java.util.Optional;
  * <p>
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
 @NoImplement
+@Deprecated
 public interface MetadataPropertiesAwareElementDeclaration {
 
   /**

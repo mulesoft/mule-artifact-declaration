@@ -7,6 +7,7 @@
 package org.mule.runtime.app.declaration.api.fluent;
 
 import static java.util.Collections.emptyMap;
+
 import org.mule.runtime.app.declaration.api.ParameterElementDeclaration;
 import org.mule.runtime.app.declaration.api.ParameterGroupElementDeclaration;
 import org.mule.runtime.app.declaration.api.ParameterValue;
@@ -19,7 +20,9 @@ import java.util.Map;
  * Allows configuring a {@link ParameterizedElementDeclaration} through a fluent API
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class ParameterGroupElementDeclarer
     extends EnrichableElementDeclarer<ParameterGroupElementDeclarer, ParameterGroupElementDeclaration>
     implements ParameterizedBuilder<String, ParameterValue, ParameterGroupElementDeclarer> {
@@ -58,6 +61,7 @@ public final class ParameterGroupElementDeclarer
    *              declaration
    * @return {@code this} declarer
    */
+  @Override
   public ParameterGroupElementDeclarer withParameter(String name, ParameterValue value) {
     withParameter(name, value, emptyMap());
     return this;

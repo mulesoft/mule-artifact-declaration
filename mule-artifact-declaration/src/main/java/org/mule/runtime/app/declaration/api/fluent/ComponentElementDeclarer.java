@@ -15,7 +15,9 @@ import java.util.function.Consumer;
  * Allows configuring an {@link ComponentElementDeclaration} through a fluent API
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public abstract class ComponentElementDeclarer<E extends ComponentElementDeclarer, D extends ComponentElementDeclaration>
     extends ParameterizedElementDeclarer<E, D>
     implements HasNestedComponentDeclarer<E>, HasNestedRoutesDeclaration<E> {

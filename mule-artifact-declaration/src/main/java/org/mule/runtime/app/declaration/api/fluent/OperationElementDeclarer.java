@@ -12,7 +12,9 @@ import org.mule.runtime.app.declaration.api.OperationElementDeclaration;
  * Allows configuring an {@link OperationElementDeclaration} through a fluent API
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class OperationElementDeclarer
     extends ComponentElementDeclarer<OperationElementDeclarer, OperationElementDeclaration> {
 

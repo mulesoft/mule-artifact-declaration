@@ -12,7 +12,9 @@ import org.mule.runtime.app.declaration.api.SourceElementDeclaration;
  * Allows configuring an {@link SourceElementDeclaration} through a fluent API
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class SourceElementDeclarer
     extends ComponentElementDeclarer<SourceElementDeclarer, SourceElementDeclaration> {
 

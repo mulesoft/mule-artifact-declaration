@@ -12,8 +12,10 @@ import org.mule.api.annotation.NoImplement;
  * Adds naming methods to an element declaration
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
 @NoImplement
+@Deprecated
 public interface NamedElementDeclaration {
 
   /**
