@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.mule.runtime</groupId>
         <artifactId>mule-artifact-declaration-parent</artifactId>
-        <version>1.8.5-SNAPSHOT</version>
+        <version>1.8.6-SNAPSHOT</version>
     </parent>
     <artifactId>mule-artifact-declaration-persistence</artifactId>
     <packaging>jar</packaging>
