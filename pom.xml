@@ -82,7 +82,7 @@
     <properties>
         <javaVersion>1.8</javaVersion>
         <javaReleaseVersion>8</javaReleaseVersion>
-        <metadataModelApiVersion>1.9.1-SNAPSHOT</metadataModelApiVersion>
+        <metadataModelApiVersion>1.9.2-SNAPSHOT</metadataModelApiVersion>
         <muleModuleMavenPluginVersion>1.9.2-SNAPSHOT</muleModuleMavenPluginVersion>
 
         <licensePath>LICENSE_HEADER_CPAL.txt</licensePath>
