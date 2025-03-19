@@ -6,10 +6,12 @@
  */
 package org.mule.runtime.app.declaration.api;
 
+import static org.mule.runtime.app.declaration.api.component.location.Location.PARAMETERS;
+
 import static java.lang.Integer.parseInt;
 import static java.util.Optional.empty;
+
 import static org.apache.commons.lang3.StringUtils.isNumeric;
-import static org.mule.runtime.app.declaration.api.component.location.Location.PARAMETERS;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -19,7 +21,9 @@ import java.util.Optional;
  * A programmatic descriptor of a {@link org.mule.runtime.api.meta.model.parameter.ParameterizedModel} configuration.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class ParameterGroupElementDeclaration extends EnrichableElementDeclaration
     implements ElementDeclarationContainer {
 

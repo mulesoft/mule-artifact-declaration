@@ -19,7 +19,9 @@ import java.util.Optional;
  * A programmatic descriptor of an application Flow configuration.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class ConstructElementDeclaration extends ComponentElementDeclaration<ConstructElementDeclaration>
     implements GlobalElementDeclaration {
 

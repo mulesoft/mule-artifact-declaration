@@ -13,8 +13,10 @@ import org.mule.runtime.app.declaration.api.fluent.ParameterObjectValue;
  * Represents the configured value of a given {@link ParameterElementDeclaration}
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
 @NoImplement
+@Deprecated
 public interface ParameterValue {
 
   /**

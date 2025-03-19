@@ -7,6 +7,7 @@
 package org.mule.runtime.app.declaration.api.fluent;
 
 import static java.util.Collections.unmodifiableMap;
+
 import org.mule.runtime.app.declaration.api.ParameterElementDeclaration;
 import org.mule.runtime.app.declaration.api.ParameterValue;
 import org.mule.runtime.app.declaration.api.ParameterValueVisitor;
@@ -19,7 +20,9 @@ import java.util.Map;
  * multiple parameter values.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class ParameterObjectValue implements ParameterValue {
 
   private Map<String, ParameterValue> parameters = new LinkedHashMap<>();
@@ -67,6 +70,7 @@ public final class ParameterObjectValue implements ParameterValue {
       return this;
     }
 
+    @Override
     public Builder withParameter(String name, ParameterValue value) {
       objectValue.parameters.put(name, value);
       return this;

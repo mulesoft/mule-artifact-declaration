@@ -10,7 +10,9 @@ package org.mule.runtime.app.declaration.api;
  * A programmatic descriptor of a {@link org.mule.runtime.api.meta.model.nested.NestedRouteModel} configuration.
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public final class RouteElementDeclaration extends ComponentElementDeclaration<RouteElementDeclaration> {
 
   public RouteElementDeclaration(String extension, String name) {

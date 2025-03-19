@@ -13,8 +13,10 @@ import org.mule.api.annotation.NoImplement;
  * {@link org.mule.runtime.api.meta.model.ExtensionModel}
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
 @NoImplement
+@Deprecated
 public interface IdentifiableElementDeclaration extends NamedElementDeclaration {
 
   /**

@@ -7,6 +7,7 @@
 package org.mule.runtime.app.declaration.api.fluent;
 
 import static org.mule.runtime.app.declaration.api.fluent.ElementDeclarer.newParameterGroup;
+
 import org.mule.runtime.app.declaration.api.ParameterGroupElementDeclaration;
 import org.mule.runtime.app.declaration.api.ParameterizedElementDeclaration;
 
@@ -16,7 +17,9 @@ import java.util.function.Consumer;
  * Allows configuring a {@link ParameterizedElementDeclaration} through a fluent API
  *
  * @since 1.0
+ * @deprecated Use mule-artifact-ast instead.
  */
+@Deprecated
 public abstract class ParameterizedElementDeclarer<E extends ParameterizedElementDeclarer, D extends ParameterizedElementDeclaration>
     extends EnrichableElementDeclarer<E, D> {
 
