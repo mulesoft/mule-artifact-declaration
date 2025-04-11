@@ -14,10 +14,6 @@
     <description>Mule Artifact Declaration</description>
     <url>https://github.com/mulesoft/mule-artifact-declaration</url>
 
-    <properties>
-        <formatterConfigPath>../formatter.xml</formatterConfigPath>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.mule.runtime</groupId>
