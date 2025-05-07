@@ -28,7 +28,7 @@ public interface ReferableElementDeclaration {
 
   /**
    * Sets the configured name of the element that can be used to reference it in the context of an {@link ArtifactDeclaration}
-   * 
+   *
    * @param referableName the configured name of the element
    */
   void setRefName(String referableName);
