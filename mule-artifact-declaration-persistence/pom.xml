@@ -12,10 +12,6 @@
     <packaging>jar</packaging>
     <name>Mule Artifact Declaration Persistence</name>
 
-    <properties>
-        <formatterConfigPath>../formatter.xml</formatterConfigPath>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.mule.runtime</groupId>
