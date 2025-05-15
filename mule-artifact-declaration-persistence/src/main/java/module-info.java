@@ -6,9 +6,9 @@
  */
 /**
  * Mule Artifact Declaration persistence layer.
- * 
+ *
  * @deprecated use {@code org.mule.runtime.artifact.ast} instead.
- * 
+ *
  * @moduleGraph
  * @since 1.5
  */
