@@ -43,7 +43,7 @@ public abstract class ComponentElementDeclaration<T extends ComponentElementDecl
 
   /**
    * Sets the {@code config-ref} parameter required for {@code this} component
-   * 
+   *
    * @param configRef the {@link ReferableElementDeclaration#getRefName()} of a {@link ConfigurationElementDeclaration}
    */
   public void setConfigRef(String configRef) {
@@ -67,7 +67,7 @@ public abstract class ComponentElementDeclaration<T extends ComponentElementDecl
 
   /**
    * Adds a {@link ComponentElementDeclaration} as a component contained by {@code this} {@link ComponentElementDeclaration scope}
-   * 
+   *
    * @param declaration the {@link ComponentElementDeclaration} child of {@code this} {@link ComponentElementDeclaration scope}
    * @return {@code this} {@link ComponentElementDeclaration scope}
    */
@@ -78,7 +78,7 @@ public abstract class ComponentElementDeclaration<T extends ComponentElementDecl
 
   /**
    * Adds a {@link ComponentElementDeclaration} as a component contained by {@code this} {@link ComponentElementDeclaration scope}
-   * 
+   *
    * @param declaration the {@link ComponentElementDeclaration} child of {@code this} {@link ComponentElementDeclaration scope}
    * @return {@code this} {@link ComponentElementDeclaration scope}
    */
