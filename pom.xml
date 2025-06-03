@@ -91,6 +91,7 @@
         <oldMuleArtifactVersion>1.7.0-rc1</oldMuleArtifactVersion>
 
         <muleBomVersion>4.10.0-SNAPSHOT</muleBomVersion>
+        <mockito.java8.version>4.11.0</mockito.java8.version>
     </properties>
 
     <modules>
@@ -113,6 +114,19 @@
                 <version>${muleBomVersion}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.java8.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-inline</artifactId>
+                <version>${mockito.java8.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
