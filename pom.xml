@@ -90,7 +90,7 @@
 
         <oldMuleArtifactVersion>1.7.0-rc1</oldMuleArtifactVersion>
 
-        <muleBomVersion>4.10.0-SNAPSHOT</muleBomVersion>
+        <muleBomVersion>4.10.0-20250610</muleBomVersion>
         <mockito.java8.version>4.11.0</mockito.java8.version>
     </properties>
 
